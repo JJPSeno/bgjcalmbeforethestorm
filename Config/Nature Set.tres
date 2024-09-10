@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://pwoj3a44q01"]
+
+[ext_resource type="PackedScene" uid="uid://cia4xeumiqah0" path="res://Entities/Trees/Tree1.tscn" id="4_0bmai"]
+[ext_resource type="PackedScene" uid="uid://botne6bigty57" path="res://Entities/Trees/Tree2.tscn" id="5_rkvby"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ph8bx"]
+scenes/1/scene = ExtResource("4_0bmai")
+scenes/2/scene = ExtResource("5_rkvby")
+
+[resource]
+tile_size = Vector2i(32, 32)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Wall"
+terrain_set_0/terrain_0/color = Color(0, 0, 0, 1)
+sources/3 = SubResource("TileSetScenesCollectionSource_ph8bx")
