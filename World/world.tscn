@@ -1,8 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=7 format=3 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
+[ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
+[ext_resource type="Texture2D" uid="uid://bip0d4p114dat" path="res://icon.svg" id="3_g8q8t"]
+[ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
+[ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
+[ext_resource type="PackedScene" uid="uid://blhugsrkjmffk" path="res://World/Buildings/Toolsmithery.tscn" id="6_trm65"]
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_m64ys")]
 position = Vector2(5, -13)
+
+[node name="Player_Room_Bldg" parent="." instance=ExtResource("2_87cis")]
+position = Vector2(48, 40)
+
+[node name="Door" type="Sprite2D" parent="Player_Room_Bldg"]
+position = Vector2(80, 15)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_g8q8t")
+
+[node name="Bed" type="Sprite2D" parent="Player_Room_Bldg"]
+position = Vector2(143, 63.5)
+scale = Vector2(0.25, 0.492188)
+texture = ExtResource("3_g8q8t")
+
+[node name="Carpenter_Bldg" parent="." instance=ExtResource("4_bl0i6")]
+position = Vector2(-63, -457)
+
+[node name="Tailors_Hut" parent="." instance=ExtResource("5_kgqvn")]
+position = Vector2(458, -13)
+
+[node name="Toolsmithery" parent="." instance=ExtResource("6_trm65")]
+position = Vector2(-398, 137)
