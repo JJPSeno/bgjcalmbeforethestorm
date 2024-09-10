@@ -1,8 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=4 format=3 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
+[ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
+[ext_resource type="Texture2D" uid="uid://bip0d4p114dat" path="res://icon.svg" id="3_g8q8t"]
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_m64ys")]
 position = Vector2(5, -13)
+
+[node name="Player_Room_Bldg" parent="." instance=ExtResource("2_87cis")]
+position = Vector2(48, 40)
+
+[node name="Door" type="Sprite2D" parent="Player_Room_Bldg"]
+position = Vector2(80, 15)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_g8q8t")
+
+[node name="Bed" type="Sprite2D" parent="Player_Room_Bldg"]
+position = Vector2(143, 63.5)
+scale = Vector2(0.25, 0.492188)
+texture = ExtResource("3_g8q8t")
