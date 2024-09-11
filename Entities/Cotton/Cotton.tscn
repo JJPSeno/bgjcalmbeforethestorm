@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://w03ka4ghj5jh"]
+
+[ext_resource type="Texture2D" uid="uid://b5mx8mfjsxgsq" path="res://Assets/entities/cotton.png" id="1_gkyyr"]
+
+[node name="Cotton" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gkyyr")
+offset = Vector2(0, 16)

@@ -1,11 +1,22 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://pwoj3a44q01"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://pwoj3a44q01"]
 
+[ext_resource type="Texture2D" uid="uid://c47fo3rfh3yiy" path="res://Assets/entities/trees.png" id="1_7hm3g"]
 [ext_resource type="PackedScene" uid="uid://cia4xeumiqah0" path="res://Entities/Trees/Tree1.tscn" id="4_0bmai"]
+[ext_resource type="PackedScene" uid="uid://w03ka4ghj5jh" path="res://Entities/Cotton/Cotton.tscn" id="4_iv45g"]
 [ext_resource type="PackedScene" uid="uid://botne6bigty57" path="res://Entities/Trees/Tree2.tscn" id="5_rkvby"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_584wm"]
+texture = ExtResource("1_7hm3g")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(4, 3)
+0:0/0 = 0
+4:0/size_in_atlas = Vector2i(4, 3)
+4:0/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ph8bx"]
 scenes/1/scene = ExtResource("4_0bmai")
 scenes/2/scene = ExtResource("5_rkvby")
+scenes/3/scene = ExtResource("4_iv45g")
 
 [resource]
 tile_size = Vector2i(32, 32)
@@ -13,3 +24,4 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Wall"
 terrain_set_0/terrain_0/color = Color(0, 0, 0, 1)
 sources/3 = SubResource("TileSetScenesCollectionSource_ph8bx")
+sources/0 = SubResource("TileSetAtlasSource_584wm")
