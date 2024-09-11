@@ -1,0 +1,14 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bckpdm6s7qu3m"]
+
+[ext_resource type="Texture2D" uid="uid://2mh4mbwlc7e4" path="res://Assets/tilesets/heavy-foliage.png" id="1_wt18i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tiiv"]
+texture = ExtResource("1_wt18i")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_0tiiv")
