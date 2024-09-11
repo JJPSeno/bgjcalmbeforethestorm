@@ -1,10 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://vyrr7a6mt5kv"]
+[gd_scene load_steps=5 format=3 uid="uid://vyrr7a6mt5kv"]
 
+[ext_resource type="Script" path="res://Entities/Meteor/meteor.gd" id="1_tui2r"]
 [ext_resource type="Texture2D" uid="uid://bc2j85wdvtsn6" path="res://Assets/entities/meteor.png" id="1_ymg6b"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable.tscn" id="3_35ka4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqk6c"]
+size = Vector2(100, 80)
 
 [node name="Meteor" type="Node2D"]
+script = ExtResource("1_tui2r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_ymg6b")
 offset = Vector2(32, 4)
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_35ka4")]
+position = Vector2(0, 12)
+collision_layer = 64
+collision_mask = 4
+parent = NodePath("..")
+
+[node name="CollisionShape2D" parent="Interactable" index="0"]
+shape = SubResource("RectangleShape2D_wqk6c")
+
+[editable path="Interactable"]

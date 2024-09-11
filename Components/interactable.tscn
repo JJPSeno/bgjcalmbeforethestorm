@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1bgpstwhe7dn"]
+[gd_scene load_steps=3 format=3 uid="uid://ub47qa11wspb"]
 
-[sub_resource type="GDScript" id="GDScript_g7eph"]
-script/source = "extends Node
+[ext_resource type="Script" path="res://Components/interactable.gd" id="1_q2p4v"]
 
-@export var base_area : Area2D
-"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llb38"]
 
-[node name="Interactable" type="Node"]
-script = SubResource("GDScript_g7eph")
+[node name="Interactable" type="Area2D"]
+script = ExtResource("1_q2p4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_llb38")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
