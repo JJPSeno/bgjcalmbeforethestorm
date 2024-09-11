@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://ub47qa11wspb"]
+[gd_scene load_steps=2 format=3 uid="uid://d1bgpstwhe7dn"]
+
+[sub_resource type="GDScript" id="GDScript_g7eph"]
+script/source = "extends Node
+
+@export var base_area : Area2D
+"
 
 [node name="Interactable" type="Node"]
+script = SubResource("GDScript_g7eph")

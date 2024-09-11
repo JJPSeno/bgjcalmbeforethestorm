@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c66o8lh8t5n5"]
+
+[ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_g6413"]
+[ext_resource type="PackedScene" uid="uid://botne6bigty57" path="res://Entities/Trees/Tree2.tscn" id="2_kmm2g"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_g6413")]
+position = Vector2(128, 85)
+
+[node name="Tree 2" parent="." instance=ExtResource("2_kmm2g")]
+position = Vector2(303.351, 7.79822)
