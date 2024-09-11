@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgc0kkf3mp0fy"]
+
+[ext_resource type="Texture2D" uid="uid://rcnkr48es4qu" path="res://Assets/entities/ores.png" id="1_noew3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddtdm"]
+atlas = ExtResource("1_noew3")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Ore1" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_ddtdm")

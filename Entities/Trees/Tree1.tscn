@@ -4,12 +4,11 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3t4vk"]
 atlas = ExtResource("1_v81i7")
-region = Rect2(0, 0, 56, 48)
+region = Rect2(12, 14, 96, 78)
 
 [node name="Tree 1" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -13)
 texture = SubResource("AtlasTexture_3t4vk")

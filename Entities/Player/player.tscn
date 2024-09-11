@@ -91,6 +91,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_r6anq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -98,8 +99,9 @@ shape = SubResource("RectangleShape2D_1dn3k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ub51t")
-animation = &"face_down"
+animation = &"face_left"
 autoplay = "face_down"
+offset = Vector2(0, 16)
 
 [node name="WeaponPivot" type="Node2D" parent="."]
 
