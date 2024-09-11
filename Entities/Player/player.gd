@@ -75,7 +75,7 @@ func swing_weapon() -> void:
 func create_weapon_active_timer() -> void:
 	var timer := Timer.new()
 	add_child(timer)
-	timer.wait_time = 0.7
+	timer.wait_time = 0.1
 	timer.one_shot = true
 	timer.start()
 	timer.connect("timeout", _on_timer_timeout.bind(timer))
