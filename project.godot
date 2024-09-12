@@ -18,10 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Singleton/game_manager.tscn"
+QuestSystem="*res://Systems/QuestSystem.gd"
+DialogueSystem="*res://Systems/DialogueSystem.gd"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[global_group]
+
+player=""
 
 [input]
 
