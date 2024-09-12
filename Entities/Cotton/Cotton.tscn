@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://w03ka4ghj5jh"]
+[gd_scene load_steps=4 format=3 uid="uid://w03ka4ghj5jh"]
 
 [ext_resource type="Texture2D" uid="uid://b5mx8mfjsxgsq" path="res://Assets/entities/cotton.png" id="1_gkyyr"]
+[ext_resource type="Script" path="res://Entities/Cotton/cotton.gd" id="1_rg7ng"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable.tscn" id="2_241lt"]
 
 [node name="Cotton" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_rg7ng")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_241lt")]
+collision_layer = 16
+collision_mask = 6
+parent = NodePath("..")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
 texture = ExtResource("1_gkyyr")
 offset = Vector2(0, 16)
