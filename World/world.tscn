@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=19 format=4 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
@@ -10,11 +10,46 @@
 [ext_resource type="PackedScene" uid="uid://cwtmft1bmes0x" path="res://Entities/Ores/Ore2.tscn" id="8_naayg"]
 [ext_resource type="PackedScene" uid="uid://cgc0kkf3mp0fy" path="res://Entities/Ores/Ore1.tscn" id="9_dikfu"]
 [ext_resource type="PackedScene" uid="uid://vyrr7a6mt5kv" path="res://Entities/Meteor/Meteor.tscn" id="9_qb68i"]
+[ext_resource type="PackedScene" uid="uid://w03ka4ghj5jh" path="res://Entities/Cotton/Cotton.tscn" id="11_c1w8t"]
+[ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="12_4n65c"]
+[ext_resource type="Script" path="res://Components/dialogue/GameDialogue.gd" id="13_0iccr"]
+
+[sub_resource type="Resource" id="Resource_xyibj"]
+script = ExtResource("13_0iccr")
+condition = "get_quest(\"bad_cotton\") == null"
+text = "Woah there, did you fookin hit me?
+---
+Okay bub, non of my friend's are gonna be talking to you"
+completion = "set_quest(\"bad_cotton\",true)"
+
+[sub_resource type="Resource" id="Resource_vte0h"]
+script = ExtResource("13_0iccr")
+condition = ""
+text = "I ain't talking to you"
+completion = ""
+
+[sub_resource type="Resource" id="Resource_1r111"]
+script = ExtResource("13_0iccr")
+condition = "get_quest(\"bad_cotton\") == null"
+text = "White's the leader, talk to him first"
+completion = ""
+
+[sub_resource type="Resource" id="Resource_sbguj"]
+script = ExtResource("13_0iccr")
+condition = ""
+text = "Bro, how could you"
+completion = ""
+
+[sub_resource type="Resource" id="Resource_psb5g"]
+script = ExtResource("13_0iccr")
+condition = ""
+text = "Fook man, what did we cotton peeps ever do to you?"
+completion = ""
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_m64ys")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_m64ys")]
 position = Vector2(130, -21)
 
 [node name="Player_Room_Bldg" parent="." instance=ExtResource("2_87cis")]
@@ -92,3 +127,26 @@ z_index = -10
 color = Color(0.3186, 0.54, 0.34812, 1)
 polygon = PackedVector2Array(132, 4048, 4721, 2957, 5601, 901, 4020, -2547, 420, -2754, -3639, -1829, -4412, 515, -3217, 2791)
 metadata/_edit_lock_ = true
+
+[node name="Cotton" parent="." instance=ExtResource("11_c1w8t")]
+position = Vector2(222, -32)
+
+[node name="Dialogueable" parent="Cotton" instance=ExtResource("12_4n65c")]
+position = Vector2(0, -21)
+dialogues = Array[ExtResource("13_0iccr")]([SubResource("Resource_xyibj"), SubResource("Resource_vte0h")])
+
+[node name="Cotton2" parent="." instance=ExtResource("11_c1w8t")]
+modulate = Color(0.774566, 0.00100844, 0.857815, 1)
+position = Vector2(161, -97)
+
+[node name="Dialogueable" parent="Cotton2" instance=ExtResource("12_4n65c")]
+position = Vector2(0, -21)
+dialogues = Array[ExtResource("13_0iccr")]([SubResource("Resource_1r111"), SubResource("Resource_sbguj")])
+
+[node name="Cotton3" parent="." instance=ExtResource("11_c1w8t")]
+modulate = Color(0.597445, 0.480268, 0, 1)
+position = Vector2(75, -32)
+
+[node name="Dialogueable" parent="Cotton3" instance=ExtResource("12_4n65c")]
+position = Vector2(0, -21)
+dialogues = Array[ExtResource("13_0iccr")]([SubResource("Resource_1r111"), SubResource("Resource_psb5g")])
