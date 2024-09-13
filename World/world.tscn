@@ -56,12 +56,12 @@ position = Vector2(130, -21)
 position = Vector2(48, 40)
 metadata/_edit_lock_ = true
 
-[node name="Door" type="Sprite2D" parent="Player_Room_Bldg"]
+[node name="Door2" type="Sprite2D" parent="Player_Room_Bldg"]
 position = Vector2(80, 15)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_g8q8t")
 
-[node name="Bed" type="Sprite2D" parent="Player_Room_Bldg"]
+[node name="Bed2" type="Sprite2D" parent="Player_Room_Bldg"]
 position = Vector2(143, 63.5)
 scale = Vector2(0.25, 0.492188)
 texture = ExtResource("3_g8q8t")
