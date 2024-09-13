@@ -1,8 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://vyrr7a6mt5kv"]
+[gd_scene load_steps=7 format=3 uid="uid://vyrr7a6mt5kv"]
 
 [ext_resource type="Script" path="res://Entities/Meteor/meteor.gd" id="1_tui2r"]
 [ext_resource type="Texture2D" uid="uid://bc2j85wdvtsn6" path="res://Assets/entities/meteor.png" id="1_ymg6b"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable.tscn" id="3_35ka4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma765"]
+atlas = ExtResource("1_ymg6b")
+region = Rect2(1, 7, 61, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc3g2"]
+atlas = ExtResource("1_ymg6b")
+region = Rect2(72, 21, 66, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqk6c"]
 size = Vector2(100, 80)
@@ -10,9 +18,17 @@ size = Vector2(100, 80)
 [node name="Meteor" type="Node2D"]
 script = ExtResource("1_tui2r")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Meteor" type="Sprite2D" parent="."]
+position = Vector2(-78, 0)
 scale = Vector2(2, 2)
-texture = ExtResource("1_ymg6b")
+texture = SubResource("AtlasTexture_ma765")
+offset = Vector2(32, 4)
+
+[node name="Tail" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(35, 4)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_pc3g2")
 offset = Vector2(32, 4)
 
 [node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_35ka4")]

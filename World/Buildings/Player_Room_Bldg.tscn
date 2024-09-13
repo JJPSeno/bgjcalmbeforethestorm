@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=4 uid="uid://8w0ml10hpnxd"]
+[gd_scene load_steps=7 format=4 uid="uid://8w0ml10hpnxd"]
 
 [ext_resource type="TileSet" uid="uid://cf55y4yeoncux" path="res://Config/Wooden House Set.tres" id="1_me27x"]
+[ext_resource type="Texture2D" uid="uid://dn3c8ev4wlwvd" path="res://Config/furniture/Bed.tres" id="2_glx16"]
+[ext_resource type="Texture2D" uid="uid://cpqh7aidgfsqh" path="res://Config/furniture/SideTable.tres" id="3_8hndm"]
+[ext_resource type="Texture2D" uid="uid://cl4vsc7akvayp" path="res://Config/furniture/Door_Horizontal.tres" id="4_dw52i"]
+[ext_resource type="Texture2D" uid="uid://c4817tfsja5nc" path="res://Config/furniture/BigTable.tres" id="5_4n3ic"]
+[ext_resource type="Texture2D" uid="uid://c80jwf7d5e567" path="res://Config/furniture/Chair.tres" id="6_i53ro"]
 
 [node name="Player_Room_Bldg" type="Node2D"]
 
@@ -8,8 +13,35 @@
 position = Vector2(-224, -128)
 tile_map_data = PackedByteArray("AAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAA=")
 tile_set = ExtResource("1_me27x")
+metadata/_edit_lock_ = true
 
 [node name="Walls" type="TileMapLayer" parent="."]
 position = Vector2(-224, -128)
 tile_map_data = PackedByteArray("AAAHAAkAAgABAAIAAAAHAAgAAgAAAAEAAAAHAAcAAgAAAAEAAAAHAAYAAgAAAAEAAAAKAAkAAgACAAMAAAAJAAkAAgACAAMAAAAIAAkAAgACAAMAAAAHAAUAAgAAAAEAAAAHAAQAAgABAAAAAAAMAAkAAgADAAIAAAAMAAgAAgAAAAEAAAAMAAcAAgAAAAEAAAAMAAYAAgAAAAEAAAAMAAUAAgAAAAEAAAAMAAQAAgADAAAAAAALAAkAAgACAAMAAAALAAQAAgACAAMAAAAKAAQAAgABAAMAAAAIAAQAAgADAAMAAAA=")
 tile_set = ExtResource("1_me27x")
+metadata/_edit_lock_ = true
+
+[node name="Bed" type="Sprite2D" parent="."]
+position = Vector2(148, 42)
+texture = ExtResource("2_glx16")
+
+[node name="SideTable" type="Sprite2D" parent="."]
+position = Vector2(119, 43)
+texture = ExtResource("3_8hndm")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(80, 16)
+texture = ExtResource("4_dw52i")
+
+[node name="BigTable" type="Sprite2D" parent="."]
+position = Vector2(97, 116)
+texture = ExtResource("5_4n3ic")
+
+[node name="Chair" type="Sprite2D" parent="."]
+position = Vector2(130, 112)
+texture = ExtResource("6_i53ro")
+
+[node name="Chair2" type="Sprite2D" parent="."]
+position = Vector2(65, 112)
+texture = ExtResource("6_i53ro")
+flip_h = true
