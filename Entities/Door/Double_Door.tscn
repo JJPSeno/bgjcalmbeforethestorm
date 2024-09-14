@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1igu3fewrmqh"]
+
+[ext_resource type="Texture2D" uid="uid://cl4vsc7akvayp" path="res://Config/furniture/Door_Horizontal.tres" id="1_f6ouf"]
+[ext_resource type="Texture2D" uid="uid://cq371o5eagksa" path="res://Config/furniture/Door_Vertical.tres" id="2_aovvr"]
+[ext_resource type="PackedScene" uid="uid://6yluqsnil7c8" path="res://Components/static-erbody/static-erbody.tscn" id="3_23huo"]
+[ext_resource type="Script" path="res://Entities/Door/door_controller.gd" id="4_88vgv"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="5_r0tcv"]
+[ext_resource type="AudioStream" uid="uid://crikcpjs3i1k1" path="res://Assets/sounds/door_open.wav" id="6_tfu38"]
+
+[node name="Door" type="Node2D"]
+y_sort_enabled = true
+
+[node name="H Door" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+texture = ExtResource("1_f6ouf")
+
+[node name="H Door2" type="Sprite2D" parent="H Door"]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(32, 0)
+texture = ExtResource("1_f6ouf")
+flip_h = true
+
+[node name="V Door" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+y_sort_enabled = true
+position = Vector2(-9, 0)
+texture = ExtResource("2_aovvr")
+
+[node name="V Door2" type="Sprite2D" parent="V Door"]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(50, 0)
+texture = ExtResource("2_aovvr")
+flip_h = true
+
+[node name="SOLID BODY" parent="." instance=ExtResource("3_23huo")]
+unique_name_in_owner = true
+position = Vector2(-1, -1)
+scale = Vector2(4.625, 1)
+
+[node name="Door Controller" type="Node2D" parent="."]
+script = ExtResource("4_88vgv")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("5_r0tcv")]
+position = Vector2(15, 5)
+scale = Vector2(2.05, 1)
+parent = NodePath("..")
+
+[node name="DoorOpen" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 3)
+stream = ExtResource("6_tfu38")

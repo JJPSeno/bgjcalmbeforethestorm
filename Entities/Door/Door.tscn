@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgqx7vldlp0t7"]
+
+[ext_resource type="Texture2D" uid="uid://cl4vsc7akvayp" path="res://Config/furniture/Door_Horizontal.tres" id="1_37onh"]
+[ext_resource type="Script" path="res://Entities/Door/door_controller.gd" id="3_1wrnv"]
+[ext_resource type="Texture2D" uid="uid://cq371o5eagksa" path="res://Config/furniture/Door_Vertical.tres" id="4_nffe3"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="4_njaxq"]
+[ext_resource type="AudioStream" uid="uid://crikcpjs3i1k1" path="res://Assets/sounds/door_open.wav" id="6_7dexr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vllgr"]
+size = Vector2(13, 21)
+
+[node name="Door" type="Node2D"]
+y_sort_enabled = true
+
+[node name="H Door" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+texture = ExtResource("1_37onh")
+
+[node name="V Door" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+y_sort_enabled = true
+position = Vector2(-9, 0)
+texture = ExtResource("4_nffe3")
+
+[node name="SOLID BODY" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 42
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SOLID BODY"]
+position = Vector2(0.5, 5.5)
+shape = SubResource("RectangleShape2D_vllgr")
+
+[node name="Door Controller" type="Node2D" parent="."]
+script = ExtResource("3_1wrnv")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_njaxq")]
+position = Vector2(0, 5)
+parent = NodePath("..")
+
+[node name="DoorOpen" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 3)
+stream = ExtResource("6_7dexr")
