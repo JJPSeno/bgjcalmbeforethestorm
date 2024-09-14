@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://bnu7gt00el3rr"]
 
 [ext_resource type="TileSet" uid="uid://cf55y4yeoncux" path="res://Config/Wooden House Set.tres" id="1_85xx3"]
-[ext_resource type="Texture2D" uid="uid://cl4vsc7akvayp" path="res://Config/furniture/Door_Horizontal.tres" id="2_snaoe"]
+[ext_resource type="PackedScene" uid="uid://dgqx7vldlp0t7" path="res://Entities/Door/Door.tscn" id="2_vmo2v"]
 
 [node name="Carpenter_Bldg" type="Node2D"]
 
@@ -15,6 +15,5 @@ position = Vector2(-224, -128)
 tile_map_data = PackedByteArray("AAAHAAkAAgABAAIAAAAHAAgAAgAAAAEAAAAHAAcAAgAAAAEAAAAHAAYAAgAAAAEAAAAKAAkAAgABAAMAAAAIAAkAAgADAAMAAAAHAAUAAgAAAAEAAAAHAAQAAgABAAAAAAAMAAkAAgACAAMAAAAMAAQAAgACAAMAAAALAAkAAgACAAMAAAALAAQAAgACAAMAAAAKAAQAAgACAAMAAAAIAAQAAgACAAMAAAAJAAQAAgACAAMAAAANAAQAAgADAAAAAAANAAkAAgADAAIAAAANAAgAAgAAAAEAAAANAAcAAgAAAAEAAAANAAYAAgAAAAEAAAANAAUAAgAAAAEAAAAOAAUABAABAAMAAAAOAAkABAABAAMAAAAPAAkABAADAAMAAAARAAkABAABAAMAAAASAAkABAADAAIAAAASAAgABAAAAAEAAAASAAUABAAAAAAAAAASAAcABAAAAAEAAAASAAYABAAAAAEAAAAPAAUABAACAAIAAAAQAAUABAADAAMAAAA=")
 tile_set = ExtResource("1_85xx3")
 
-[node name="Door" type="Sprite2D" parent="."]
-position = Vector2(80, 176)
-texture = ExtResource("2_snaoe")
+[node name="Door2" parent="." instance=ExtResource("2_vmo2v")]
+position = Vector2(82, 176)

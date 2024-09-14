@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Components/swingable/swingable.gd" id="1_wh8dc"]
 [ext_resource type="PackedScene" uid="uid://bvoyu028emjgu" path="res://Entities/Player/Weapon/weapon.tscn" id="2_vrwel"]
 [ext_resource type="Texture2D" uid="uid://dsmcphncopg6s" path="res://Assets/weapons/greatsword.png" id="2_vtgwa"]
+[ext_resource type="AudioStream" uid="uid://chn8rja1gwfn7" path="res://Assets/sounds/big_sword.wav" id="3_usc6i"]
 
 [sub_resource type="Animation" id="Animation_mmj56"]
 length = 0.001
@@ -207,3 +208,6 @@ libraries = {
 }
 autoplay = "default"
 speed_scale = 2.2
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_usc6i")

@@ -3,8 +3,8 @@
 [ext_resource type="TileSet" uid="uid://cf55y4yeoncux" path="res://Config/Wooden House Set.tres" id="1_me27x"]
 [ext_resource type="Texture2D" uid="uid://dn3c8ev4wlwvd" path="res://Config/furniture/Bed.tres" id="2_glx16"]
 [ext_resource type="Texture2D" uid="uid://cpqh7aidgfsqh" path="res://Config/furniture/SideTable.tres" id="3_8hndm"]
-[ext_resource type="Texture2D" uid="uid://cl4vsc7akvayp" path="res://Config/furniture/Door_Horizontal.tres" id="4_dw52i"]
 [ext_resource type="Texture2D" uid="uid://c4817tfsja5nc" path="res://Config/furniture/BigTable.tres" id="5_4n3ic"]
+[ext_resource type="PackedScene" uid="uid://dgqx7vldlp0t7" path="res://Entities/Door/Door.tscn" id="6_hb6my"]
 [ext_resource type="Texture2D" uid="uid://c80jwf7d5e567" path="res://Config/furniture/Chair.tres" id="6_i53ro"]
 
 [node name="Player_Room_Bldg" type="Node2D"]
@@ -29,10 +29,6 @@ texture = ExtResource("2_glx16")
 position = Vector2(119, 43)
 texture = ExtResource("3_8hndm")
 
-[node name="Door" type="Sprite2D" parent="."]
-position = Vector2(80, 16)
-texture = ExtResource("4_dw52i")
-
 [node name="BigTable" type="Sprite2D" parent="."]
 position = Vector2(97, 116)
 texture = ExtResource("5_4n3ic")
@@ -45,3 +41,6 @@ texture = ExtResource("6_i53ro")
 position = Vector2(65, 112)
 texture = ExtResource("6_i53ro")
 flip_h = true
+
+[node name="Door2" parent="." instance=ExtResource("6_hb6my")]
+position = Vector2(80, 16)

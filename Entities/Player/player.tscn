@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhnoos5wf8m37"]
+[gd_scene load_steps=20 format=3 uid="uid://bhnoos5wf8m37"]
 
 [ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_r6anq"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="2_afvag"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Components/health/health.gd" id="4_fwab0"]
 [ext_resource type="PackedScene" uid="uid://cs5t8xml0fug2" path="res://Components/health/healthbar.tscn" id="5_y0p13"]
 [ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="6_qe7xw"]
+[ext_resource type="PackedScene" uid="uid://cro6pn861updj" path="res://Components/walksound/walksound.tscn" id="9_kimv4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dn3k"]
 
@@ -130,3 +131,6 @@ scale = Vector2(0.246558, 0.246558)
 
 [node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_qe7xw")]
 target = NodePath("../Bobble Target")
+
+[node name="Walksound" parent="." instance=ExtResource("9_kimv4")]
+volume_db = 3.07

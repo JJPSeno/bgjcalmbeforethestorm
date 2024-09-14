@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Components/swingable/swingable.gd" id="1_qh5ec"]
 [ext_resource type="Texture2D" uid="uid://cal7voksesruw" path="res://Assets/weapons/averagesword.png" id="2_pnce8"]
+[ext_resource type="AudioStream" uid="uid://cw4jk246rikyi" path="res://Assets/sounds/small_sword.wav" id="2_yl16r"]
 [ext_resource type="PackedScene" uid="uid://bvoyu028emjgu" path="res://Entities/Player/Weapon/weapon.tscn" id="3_w33yq"]
 
 [sub_resource type="Animation" id="Animation_mmj56"]
@@ -209,6 +210,9 @@ z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_qh5ec")
 animPlayer = NodePath("AnimationPlayer")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yl16r")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 y_sort_enabled = true

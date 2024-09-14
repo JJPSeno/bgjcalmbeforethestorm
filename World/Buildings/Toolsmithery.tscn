@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=4 uid="uid://blhugsrkjmffk"]
 
 [ext_resource type="TileSet" uid="uid://cf55y4yeoncux" path="res://Config/Wooden House Set.tres" id="1_lf8i0"]
-[ext_resource type="Texture2D" uid="uid://cl4vsc7akvayp" path="res://Config/furniture/Door_Horizontal.tres" id="2_qw4i0"]
 [ext_resource type="Texture2D" uid="uid://cd5sp1hnnc4yh" path="res://Config/furniture/Anvil.tres" id="3_j5kit"]
 [ext_resource type="Texture2D" uid="uid://dn3c8ev4wlwvd" path="res://Config/furniture/Bed.tres" id="4_3mgx6"]
 [ext_resource type="Texture2D" uid="uid://c4817tfsja5nc" path="res://Config/furniture/BigTable.tres" id="5_b8rlf"]
 [ext_resource type="Texture2D" uid="uid://dja1w3ruia4gb" path="res://Config/furniture/Fireplace.tres" id="6_kahvf"]
 [ext_resource type="Texture2D" uid="uid://cpqh7aidgfsqh" path="res://Config/furniture/SideTable.tres" id="7_yukkk"]
 [ext_resource type="Texture2D" uid="uid://bwgsooeiud8km" path="res://Config/furniture/WeaponRack.tres" id="8_2i3ep"]
+[ext_resource type="PackedScene" uid="uid://dgqx7vldlp0t7" path="res://Entities/Door/Door.tscn" id="9_5w85x"]
 [ext_resource type="Texture2D" uid="uid://c80jwf7d5e567" path="res://Config/furniture/Chair.tres" id="9_vrsej"]
 
 [node name="Toolsmithery" type="Node2D"]
@@ -21,10 +21,6 @@ tile_set = ExtResource("1_lf8i0")
 position = Vector2(-224, -128)
 tile_map_data = PackedByteArray("AAAHAA8AAwAIAAMAAAAHAA4AAwAIAAEAAAAHAA0AAwAIAAEAAAAHAAwAAwAIAAEAAAAHAAsAAwAIAAEAAAAHAAoAAwAIAAEAAAAHAAkAAwAIAAEAAAAHAAgAAwAIAAEAAAAHAAcAAwAIAAAAAAASAA8AAwAJAAMAAAARAA8AAwAJAAMAAAAQAA8AAwAJAAMAAAAPAA8AAwAJAAMAAAAOAA8AAwAJAAMAAAANAA8AAwAJAAMAAAAMAA8AAwAJAAMAAAALAA8AAwAJAAMAAAAKAA8AAwAJAAMAAAAJAA8AAwAJAAMAAAAIAA8AAwAJAAMAAAASAAoAAwAFAAIAAAARAAoAAwAJAAMAAAAQAAoAAwAIAAMAAAAOAAoAAwALAAMAAAANAAoAAwAJAAMAAAAMAAoAAwAIAAMAAAASAA4AAwAFAAEAAAASAA0AAwAIAAEAAAASAAwAAwAIAAEAAAASAAsAAwAIAAEAAAAMAAkAAwAIAAEAAAAMAAgAAwAFAAIAAAAMAAcAAwAKAAAAAAALAAcAAwAKAAAAAAAKAAcAAwAKAAAAAAAJAAcAAwAKAAAAAAAIAAcAAwAKAAAAAAARAA4AAwAKAAAAAAAQAA4AAwAKAAAAAAAPAA4AAwAKAAAAAAAOAA4AAwAKAAAAAAANAA4AAwAKAAAAAAAMAA4AAwAKAAAAAAALAA4AAwAKAAAAAAAKAA4AAwAKAAAAAAAJAA4AAwAKAAAAAAAIAA4AAwAGAAEAAAAIAA0AAwALAAIAAAAIAAwAAwALAAIAAAAIAAsAAwALAAIAAAAIAAoAAwALAAIAAAAIAAkAAwALAAIAAAAIAAgAAwAGAAIAAAAJAAgAAwAJAAMAAAAKAAgAAwAJAAMAAAALAAgAAwAJAAMAAAANAAkAAwAGAAEAAAANAAgAAwALAAIAAAANAAcAAwALAAAAAAATAAoAAwALAAIAAAATAAsAAwALAAIAAAATAAwAAwALAAIAAAATAA0AAwALAAIAAAATAA4AAwALAAIAAAATAA8AAwALAAMAAAAQAAkAAwAIAAAAAAARAAkAAwAKAAAAAAASAAkAAwAKAAAAAAATAAkAAwALAAAAAAAOAAkAAwALAAAAAAA=")
 tile_set = ExtResource("1_lf8i0")
-
-[node name="DoorHorizontal" type="Sprite2D" parent="."]
-position = Vector2(272, 208)
-texture = ExtResource("2_qw4i0")
 
 [node name="Anvil" type="Sprite2D" parent="."]
 position = Vector2(238, 233)
@@ -70,3 +66,6 @@ texture = ExtResource("9_vrsej")
 position = Vector2(77, 163)
 texture = ExtResource("9_vrsej")
 flip_h = true
+
+[node name="Door" parent="." instance=ExtResource("9_5w85x")]
+position = Vector2(272, 208)

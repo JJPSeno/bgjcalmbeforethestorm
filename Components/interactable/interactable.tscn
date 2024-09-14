@@ -3,8 +3,11 @@
 [ext_resource type="Script" path="res://Components/interactable/interactable.gd" id="1_q2p4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_llb38"]
+size = Vector2(28, 22)
 
 [node name="Interactable" type="Area2D"]
+collision_layer = 16
+collision_mask = 6
 script = ExtResource("1_q2p4v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

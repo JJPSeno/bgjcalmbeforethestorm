@@ -14,6 +14,7 @@ var weapon: Area2D
 @onready var weapon_pivot: Node2D = $WeaponPivot
 @onready var animated_sprite_2d: AnimatedSprite2D = $"Bobble Target/AnimatedSprite2D"
 @onready var bobbeable = $Bobbeable
+@onready var walksound = $Walksound
 
 enum FacingDirection {UP, RIGHT, DOWN, LEFT}
 
@@ -50,6 +51,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, 1 - exp(-friction * delta))
 	bobbeable.is_bobbing = snapped(velocity.length(),4) > 0
+	walksound.is_walking = bobbeable.is_bobbing
 	move_and_slide()
 
 
