@@ -1,10 +1,9 @@
-[gd_scene load_steps=27 format=4 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=26 format=4 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
-[ext_resource type="Texture2D" uid="uid://bip0d4p114dat" path="res://icon.svg" id="3_g8q8t"]
 [ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
-[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/Carpenter/carpenter.tscn" id="5_5spr1"]
+[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_5spr1"]
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
 [ext_resource type="PackedScene" uid="uid://tkt6eauokv8m" path="res://Entities/NPCS/Tailor/tailor.tscn" id="6_dqhfu"]
 [ext_resource type="PackedScene" uid="uid://blhugsrkjmffk" path="res://World/Buildings/Toolsmithery.tscn" id="6_trm65"]
@@ -98,16 +97,6 @@ position = Vector2(130, -21)
 [node name="Player_Room_Bldg" parent="." instance=ExtResource("2_87cis")]
 position = Vector2(48, 40)
 metadata/_edit_lock_ = true
-
-[node name="Door2" type="Sprite2D" parent="Player_Room_Bldg"]
-position = Vector2(80, 15)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_g8q8t")
-
-[node name="Bed2" type="Sprite2D" parent="Player_Room_Bldg"]
-position = Vector2(143, 63.5)
-scale = Vector2(0.25, 0.492188)
-texture = ExtResource("3_g8q8t")
 
 [node name="Carpenter_Bldg" parent="." instance=ExtResource("4_bl0i6")]
 position = Vector2(-63, -457)
