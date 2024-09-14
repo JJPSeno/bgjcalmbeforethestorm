@@ -1,0 +1,208 @@
+[gd_scene load_steps=8 format=3 uid="uid://baj8bxspcyuqd"]
+
+[ext_resource type="Script" path="res://Components/swingable/swingable.gd" id="1_wh8dc"]
+[ext_resource type="Texture2D" uid="uid://dsmcphncopg6s" path="res://Assets/weapons/greatsword.png" id="2_vtgwa"]
+
+[sub_resource type="Animation" id="Animation_mmj56"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.947037]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(4.28836, -38.8151, -18.0449, -32.3169, -23.9434, -27.1976, -29.3367, -18.9567, -33.3982, -6.44656, -34.017, 3.58425, -27.8635, 21.8088, -15.9956, 29.8184, -17.1668, 24.5622, -19.8303, 16.0237, -19.7169, 2.87122, -17.6059, -3.87737, -10.7203, -8.83606, -3.48995, -9.68609)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Polygon2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3s50k"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.947037]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array()]
+}
+
+[sub_resource type="Animation" id="Animation_mjtew"]
+resource_name = "swing_1"
+length = 0.6005
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.947037, -1.14244, -1.14244, 1.51844, 1.40952]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.366667, 0.433333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(), PackedVector2Array(4.28836, -38.8151, -18.0449, -32.3169, -23.9434, -27.1976, -29.3367, -18.9567, -33.3982, -6.44656, -34.017, 3.58425, -27.8635, 21.8088, -15.9956, 29.8184, -17.1668, 24.5622, -19.8303, 16.0237, -19.7169, 2.87122, -17.6059, -3.87737, -10.7203, -8.83606, -3.48995, -9.68609), PackedVector2Array(1.00614, -37.3228, -14.0968, -31.6746, -23.9199, -21.1149, -26.9944, -8.44419, -25.6155, 7.99049, -19.5799, -4.19852, -14.3472, -11.4524, -7.43804, -10.3284, -3.65052, -8.69906), PackedVector2Array(-3.42367, -35.004, -8.01407, -31.6982, -9.91739, -13.7712, -7.62219, -15.4241, -3.65052, -8.69906), PackedVector2Array()]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Polygon2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_umv3x"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.40952, 1.48673, 1.48673, -1.0766, -0.947037]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Polygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.366667, 0.433333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(), PackedVector2Array(-27.9784, 28.9, -31.9552, 22.178, -34.7851, 14.6287, -35.0013, 3.45046, -35.3492, -0.657941, -32.4725, -18.4266, -30.3666, -25.1768, -26.7659, -28.6459, -23.0053, -33.1022, -16.4432, -36.0919, -12.175, -37.4269, -18.8687, -27.3674, -19.508, -23.4188, -19.7994, -15.3618, -19.1036, -7.14497, -15.7943, -2.55711, -13.4722, 1.87094, -9.33554, 7.60576, -19.1223, 24.2557), PackedVector2Array(-29.6331, 26.6061, -32.651, 13.9612, -32.1997, 4.91707, -25.2146, -13.1994, -21.2095, -0.394765, -16.4054, 7.47417, -9.33554, 7.60576, -19.1223, 24.2557), PackedVector2Array(-29.6331, 26.6061, -31.1561, 17.2423, -28.8904, 9.50493, -20.9932, 10.7835, -9.33554, 7.60576), PackedVector2Array()]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p73k5"]
+_data = {
+"RESET": SubResource("Animation_mmj56"),
+"default": SubResource("Animation_3s50k"),
+"swing_1": SubResource("Animation_mjtew"),
+"swing_2": SubResource("Animation_umv3x")
+}
+
+[node name="Great Sword" type="Node2D" node_paths=PackedStringArray("animPlayer", "flipTarget")]
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_wh8dc")
+animPlayer = NodePath("AnimationPlayer")
+flipTarget = NodePath("")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+y_sort_enabled = true
+rotation = 1.41029
+color = Color(0.796078, 0.858824, 0.988235, 1)
+polygon = PackedVector2Array(4.28836, -38.8151, -18.0449, -32.3169, -23.9434, -27.1976, -29.3367, -18.9567, -33.3982, -6.44656, -34.017, 3.58425, -27.8635, 21.8088, -15.9956, 29.8184, -17.1668, 24.5622, -19.8303, 16.0237, -19.7169, 2.87122, -17.6059, -3.87737, -10.7203, -8.83606, -3.48995, -9.68609)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+rotation = -0.947037
+scale = Vector2(1, 1)
+texture = ExtResource("2_vtgwa")
+offset = Vector2(0, -20)
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p73k5")
+}
+autoplay = "default"
+speed_scale = 2.2

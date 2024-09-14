@@ -38,6 +38,7 @@ func _input(event: InputEvent) -> void:
 		swing_weapon()
 
 
+
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector("left","right","up","down")
 	if direction:
@@ -73,6 +74,9 @@ func swing_weapon() -> void:
 	can_swing = false
 	set_weapon_monitor(true)
 	create_weapon_active_timer()
+	for child in weapon_pivot.get_children():
+		if child.is_visible_in_tree() and child.has_method('_on_interact'):
+			child._on_interact()
 
 func create_weapon_active_timer() -> void:
 	var timer := Timer.new()

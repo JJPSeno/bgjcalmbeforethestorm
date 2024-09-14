@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhnoos5wf8m37"]
+[gd_scene load_steps=19 format=3 uid="uid://bhnoos5wf8m37"]
 
 [ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_r6anq"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="2_afvag"]
 [ext_resource type="PackedScene" uid="uid://bvoyu028emjgu" path="res://Entities/Player/Weapon/weapon.tscn" id="3_cl26a"]
+[ext_resource type="PackedScene" uid="uid://baj8bxspcyuqd" path="res://Components/swingable/great-sword.tscn" id="4_33clm"]
 [ext_resource type="Script" path="res://Components/health/health.gd" id="4_fwab0"]
+[ext_resource type="PackedScene" uid="uid://yxk4bbfl2njk" path="res://Components/swingable/average-sword.tscn" id="5_ns5ba"]
 [ext_resource type="PackedScene" uid="uid://cs5t8xml0fug2" path="res://Components/health/healthbar.tscn" id="5_y0p13"]
 [ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="6_qe7xw"]
 
@@ -117,6 +119,14 @@ offset = Vector2(0, 16)
 
 [node name="Weapon" parent="WeaponPivot" instance=ExtResource("3_cl26a")]
 position = Vector2(0, 24)
+
+[node name="Great Sword" parent="WeaponPivot" instance=ExtResource("4_33clm")]
+visible = false
+scale = Vector2(1, -1)
+
+[node name="Average Sword" parent="WeaponPivot" instance=ExtResource("5_ns5ba")]
+position = Vector2(0, 4)
+scale = Vector2(1, -1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
