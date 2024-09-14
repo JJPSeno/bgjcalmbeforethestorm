@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cro6pn861updj"]
+
+[ext_resource type="AudioStream" uid="uid://bne83lw8xvy8m" path="res://Assets/sounds/walk.wav" id="1_1cj23"]
+[ext_resource type="Script" path="res://Components/walksound/walksound.gd" id="2_jcswr"]
+
+[node name="Walksound" type="AudioStreamPlayer"]
+stream = ExtResource("1_1cj23")
+volume_db = 8.0
+autoplay = true
+script = ExtResource("2_jcswr")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
