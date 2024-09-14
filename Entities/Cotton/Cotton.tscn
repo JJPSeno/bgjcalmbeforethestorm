@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b5mx8mfjsxgsq" path="res://Assets/entities/cotton.png" id="1_gkyyr"]
 [ext_resource type="Script" path="res://Entities/Cotton/cotton.gd" id="1_rg7ng"]
-[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable.tscn" id="2_241lt"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_241lt"]
 
 [node name="Cotton" type="Node2D"]
 y_sort_enabled = true

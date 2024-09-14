@@ -1,15 +1,12 @@
-[gd_scene load_steps=22 format=4 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=19 format=4 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
 [ext_resource type="Texture2D" uid="uid://bip0d4p114dat" path="res://icon.svg" id="3_g8q8t"]
 [ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
-[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_gstcf"]
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
 [ext_resource type="PackedScene" uid="uid://blhugsrkjmffk" path="res://World/Buildings/Toolsmithery.tscn" id="6_trm65"]
-[ext_resource type="PackedScene" uid="uid://bhhtlr14jwbcc" path="res://Entities/NPCS/Smith/smith.tscn" id="7_2sl6s"]
 [ext_resource type="TileSet" uid="uid://pwoj3a44q01" path="res://Config/Nature Set.tres" id="7_2tcky"]
-[ext_resource type="PackedScene" uid="uid://tkt6eauokv8m" path="res://Entities/NPCS/Tailor/tailor.tscn" id="7_5kiae"]
 [ext_resource type="PackedScene" uid="uid://cwtmft1bmes0x" path="res://Entities/Ores/Ore2.tscn" id="8_naayg"]
 [ext_resource type="PackedScene" uid="uid://cgc0kkf3mp0fy" path="res://Entities/Ores/Ore1.tscn" id="9_dikfu"]
 [ext_resource type="PackedScene" uid="uid://vyrr7a6mt5kv" path="res://Entities/Meteor/Meteor.tscn" id="9_qb68i"]
@@ -55,6 +52,8 @@ y_sort_enabled = true
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_m64ys")]
 position = Vector2(130, -21)
 
+[node name="NPCs" type="Node2D" parent="."]
+
 [node name="Player_Room_Bldg" parent="." instance=ExtResource("2_87cis")]
 position = Vector2(48, 40)
 metadata/_edit_lock_ = true
@@ -73,22 +72,13 @@ texture = ExtResource("3_g8q8t")
 position = Vector2(-63, -457)
 metadata/_edit_lock_ = true
 
-[node name="carpenter" parent="Carpenter_Bldg" instance=ExtResource("5_gstcf")]
-position = Vector2(164, 62)
-
 [node name="Tailors_Hut" parent="." instance=ExtResource("5_kgqvn")]
 position = Vector2(458, -13)
 metadata/_edit_lock_ = true
 
-[node name="Tailor" parent="Tailors_Hut" instance=ExtResource("7_5kiae")]
-position = Vector2(105, 87.5)
-
 [node name="Toolsmithery" parent="." instance=ExtResource("6_trm65")]
 position = Vector2(-398, 137)
 metadata/_edit_lock_ = true
-
-[node name="smith" parent="Toolsmithery" instance=ExtResource("7_2sl6s")]
-position = Vector2(110, 204)
 
 [node name="Ore Biome" type="Node2D" parent="."]
 y_sort_enabled = true

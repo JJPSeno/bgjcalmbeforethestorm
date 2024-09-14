@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Entities/Meteor/meteor.gd" id="1_tui2r"]
 [ext_resource type="Texture2D" uid="uid://bc2j85wdvtsn6" path="res://Assets/entities/meteor.png" id="1_ymg6b"]
-[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable.tscn" id="3_35ka4"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="3_35ka4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma765"]
 atlas = ExtResource("1_ymg6b")

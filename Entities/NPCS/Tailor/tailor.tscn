@@ -1,44 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://tkt6eauokv8m"]
+[gd_scene load_steps=4 format=3 uid="uid://tkt6eauokv8m"]
 
-[ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_hm7mt"]
-[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable.tscn" id="2_egw3a"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_egw3a"]
 [ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="3_4ehiv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1nfya"]
-atlas = ExtResource("1_hm7mt")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jficd"]
-atlas = ExtResource("1_hm7mt")
-region = Rect2(96, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i5apq"]
-atlas = ExtResource("1_hm7mt")
-region = Rect2(96, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i3yk7"]
-atlas = ExtResource("1_hm7mt")
-region = Rect2(96, 96, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_l8k56"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1nfya")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jficd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i5apq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i3yk7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Tailor" type="Node2D"]
 
