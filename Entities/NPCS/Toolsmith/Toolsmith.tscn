@@ -1,16 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhhtlr14jwbcc"]
+[gd_scene load_steps=10 format=3 uid="uid://bhhtlr14jwbcc"]
 
+[ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_ku1qx"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_cc5uw"]
 [ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="3_8utt0"]
+[ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="4_ioblk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei3yw"]
+atlas = ExtResource("1_ku1qx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu7j6"]
+atlas = ExtResource("1_ku1qx")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2gce"]
+atlas = ExtResource("1_ku1qx")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgla0"]
+atlas = ExtResource("1_ku1qx")
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4btxy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei3yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu7j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2gce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgla0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Toolsmith" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4btxy")
+speed_scale = 0.0
 
 [node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_cc5uw")]
 parent = NodePath("..")
 
 [node name="Dialogueable" parent="." instance=ExtResource("3_8utt0")]
+
+[node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_ioblk")]
+target = NodePath("..")
+is_bobbing = true

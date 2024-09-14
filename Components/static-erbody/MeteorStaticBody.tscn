@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://5fbrcvpgyc0l"]
+
+[ext_resource type="PackedScene" uid="uid://6yluqsnil7c8" path="res://Components/static-erbody/static-erbody.tscn" id="1_7sycf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_65tcd"]
+radius = 43.0
+
+[node name="MeteorStaticBody" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_7sycf")]
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-10, 14)
+shape = SubResource("CircleShape2D_65tcd")
+
+[editable path="StaticBody2D"]

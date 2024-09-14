@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://vyrr7a6mt5kv"]
+[gd_scene load_steps=8 format=3 uid="uid://vyrr7a6mt5kv"]
 
 [ext_resource type="Script" path="res://Entities/Meteor/meteor.gd" id="1_tui2r"]
 [ext_resource type="Texture2D" uid="uid://bc2j85wdvtsn6" path="res://Assets/entities/meteor.png" id="1_ymg6b"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="3_35ka4"]
+[ext_resource type="PackedScene" uid="uid://5fbrcvpgyc0l" path="res://Components/static-erbody/MeteorStaticBody.tscn" id="4_i1ibn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma765"]
 atlas = ExtResource("1_ymg6b")
@@ -12,8 +13,8 @@ region = Rect2(1, 7, 61, 53)
 atlas = ExtResource("1_ymg6b")
 region = Rect2(72, 21, 66, 29)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqk6c"]
-size = Vector2(100, 80)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ehaj1"]
+radius = 43.0
 
 [node name="Meteor" type="Node2D"]
 script = ExtResource("1_tui2r")
@@ -32,12 +33,14 @@ texture = SubResource("AtlasTexture_pc3g2")
 offset = Vector2(32, 4)
 
 [node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_35ka4")]
-position = Vector2(0, 12)
 collision_layer = 64
 collision_mask = 4
 parent = NodePath("..")
 
 [node name="CollisionShape2D" parent="Interactable" index="0"]
-shape = SubResource("RectangleShape2D_wqk6c")
+position = Vector2(-10, 14)
+shape = SubResource("CircleShape2D_ehaj1")
+
+[node name="MeteorStaticBody" parent="." instance=ExtResource("4_i1ibn")]
 
 [editable path="Interactable"]

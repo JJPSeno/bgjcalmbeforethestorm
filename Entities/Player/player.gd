@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.lerp(target_velocity, 1 - exp(-acceleration * delta))
 	else:
 		velocity = velocity.lerp(Vector2.ZERO, 1 - exp(-friction * delta))
-		bobbeable.is_bobbing = snapped(velocity.length(),4) > 0
+	bobbeable.is_bobbing = snapped(velocity.length(),4) > 0
 	move_and_slide()
 
 
