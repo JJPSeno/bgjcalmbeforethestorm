@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=20 format=4 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
 [ext_resource type="PackedScene" uid="uid://blhugsrkjmffk" path="res://World/Buildings/Toolsmithery.tscn" id="6_trm65"]
 [ext_resource type="TileSet" uid="uid://pwoj3a44q01" path="res://Config/Nature Set.tres" id="7_2tcky"]
+[ext_resource type="PackedScene" uid="uid://bhhtlr14jwbcc" path="res://Entities/NPCS/Toolsmith/Toolsmith.tscn" id="7_s10ub"]
 [ext_resource type="PackedScene" uid="uid://cwtmft1bmes0x" path="res://Entities/Ores/Ore2.tscn" id="8_naayg"]
 [ext_resource type="PackedScene" uid="uid://cgc0kkf3mp0fy" path="res://Entities/Ores/Ore1.tscn" id="9_dikfu"]
 [ext_resource type="PackedScene" uid="uid://vyrr7a6mt5kv" path="res://Entities/Meteor/Meteor.tscn" id="9_qb68i"]
@@ -79,6 +80,9 @@ metadata/_edit_lock_ = true
 [node name="Toolsmithery" parent="." instance=ExtResource("6_trm65")]
 position = Vector2(-398, 137)
 metadata/_edit_lock_ = true
+
+[node name="Toolsmith" parent="Toolsmithery" instance=ExtResource("7_s10ub")]
+position = Vector2(113, 205.5)
 
 [node name="Ore Biome" type="Node2D" parent="."]
 y_sort_enabled = true

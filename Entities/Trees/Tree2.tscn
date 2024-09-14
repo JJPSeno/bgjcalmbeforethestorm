@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://botne6bigty57"]
+[gd_scene load_steps=4 format=3 uid="uid://botne6bigty57"]
 
 [ext_resource type="Texture2D" uid="uid://c47fo3rfh3yiy" path="res://Assets/entities/trees.png" id="1_rtmpg"]
+[ext_resource type="PackedScene" uid="uid://c5bd14fkfdxkk" path="res://Components/static-erbody/TreeStaticBody.tscn" id="2_jb45t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3t4vk"]
 atlas = ExtResource("1_rtmpg")
@@ -11,3 +12,5 @@ y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_3t4vk")
+
+[node name="TreeStaticBody" parent="." instance=ExtResource("2_jb45t")]
