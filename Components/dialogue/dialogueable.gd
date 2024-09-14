@@ -22,6 +22,7 @@ func run_dialogue_selection():
 	for dialogue in dialogues:
 		if dialogue.evaluate_visibility():
 			current_diag = GameDialogueCursor.new(dialogue)
+			current_diag
 			return
 	assert(false, "%s has a dialogue behavior that couldnt find a dialogue" % get_parent().name)
 	return null
