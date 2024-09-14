@@ -80,6 +80,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [PackedVector2Array()]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Polygon2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_mjtew"]
 resource_name = "swing_1"
@@ -115,10 +127,10 @@ tracks/2/path = NodePath("Polygon2D:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -170,6 +182,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [PackedVector2Array(), PackedVector2Array(-22.4881, 7.50243, -23.5317, -4.82278, -20.9464, -14.5344, -10.9433, -20.0061, -13.8765, -14.4028, -12.7013, -9.14748, -11.3663, -4.87926, -4.1084, 0.347874, -17.5241, 14.3842), PackedVector2Array(-21.6607, 8.6494, -21.3693, 0.592407, -17.9567, -7.97227, -13.1525, -0.103342, -4.1084, 0.347874, -18.5112, 14.2244), PackedVector2Array(-19.0472, 5.02045, -11.4979, 2.19059, -4.1084, 0.347874, -19.8463, 9.95618), PackedVector2Array()]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Polygon2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p73k5"]
 _data = {
@@ -204,7 +228,3 @@ libraries = {
 }
 autoplay = "default"
 speed_scale = 2.2
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(18, -14)
-rotation = -0.694714
