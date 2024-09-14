@@ -23,7 +23,11 @@ DialogueSystem="*res://Systems/DialogueSystem.gd"
 
 [display]
 
+window/size/viewport_width=768
+window/size/viewport_height=512
+window/size/mode=2
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [global_group]
 

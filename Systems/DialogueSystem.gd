@@ -6,7 +6,6 @@ var current_target:Node2D
 var _player:Node2D
 func _ready() -> void:
 	set_process(false)
-	_player = get_tree().get_nodes_in_group("player")[0]
 
 func set_current_dialogue(diag:Dialogueable):
 	if diag == null:
@@ -24,6 +23,8 @@ func set_current_dialogue(diag:Dialogueable):
 	set_process(true)
 
 func _process(delta: float) -> void:
+	if !_player:
+		_player = get_tree().get_nodes_in_group("player")[0]
 	var dist_sqr = _player.global_position\
 		.distance_squared_to(current_target.global_position)
 	if dist_sqr >= 2800:

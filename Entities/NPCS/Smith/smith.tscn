@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhhtlr14jwbcc"]
 
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_rf0qo"]
-[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable.tscn" id="2_cc5uw"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_cc5uw"]
 [ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="3_8utt0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbfgg"]

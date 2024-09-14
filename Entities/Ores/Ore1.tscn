@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://rcnkr48es4qu" path="res://Assets/entities/ores.png" id="1_noew3"]
 [ext_resource type="Script" path="res://Entities/Ores/ore.gd" id="1_ulp8x"]
-[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable.tscn" id="2_cri4l"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_cri4l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ddtdm"]
 atlas = ExtResource("1_noew3")
@@ -11,7 +11,7 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqy8f"]
 size = Vector2(47, 33)
 
-[node name="Ore1" type="Node2D"]
+[node name="Ore2" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_ulp8x")
 
