@@ -39,3 +39,17 @@ func get_quest(str:String, default=null):
 func set_quest(str:String, value):
 	QuestSystem.quest_vars[str] = value
 	return true
+
+func start_quest(job: String, level: String) -> bool:
+	QuestSystem.emit_signal("start_"+job+"_quest_"+level)
+	QuestSystem.is_questing = true
+	QuestSystem.current_quest_giver = job
+	return true
+
+
+func check_quest_toolsmith_1() -> bool:
+	return (QuestSystem.is_questing == false) && (QuestSystem.toolsmith_level == 1)
+
+
+func check_is_questing(job: String) -> bool:
+	return (QuestSystem.is_questing == true) && (QuestSystem.current_quest_giver == job)

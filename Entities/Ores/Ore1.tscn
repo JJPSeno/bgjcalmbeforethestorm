@@ -21,6 +21,8 @@ scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_ddtdm")
 
 [node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_cri4l")]
+collision_layer = 16
+collision_mask = 4
 parent = NodePath("..")
 
 [node name="CollisionShape2D" parent="Interactable" index="0"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://diimkebikvjpb"]
+[gd_scene load_steps=2 format=3 uid="uid://bu7khlw51clvc"]
 
 [ext_resource type="Script" path="res://Singleton/game_manager.gd" id="1_lj3va"]
 
