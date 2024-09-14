@@ -4,4 +4,4 @@ extends Node2D
 @onready var health:Health = get_parent()
 
 func _process(delta: float) -> void:
-    fg.scale = Vector2(health.health/health.max_health,1)
+	fg.scale = Vector2(health.health/health.max_health,1)
