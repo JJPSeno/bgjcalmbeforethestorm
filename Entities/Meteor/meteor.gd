@@ -2,4 +2,4 @@ extends Node2D
 
 
 func interact():
-    print("You have interacted with meteor")
+	print("You have interacted with meteor")

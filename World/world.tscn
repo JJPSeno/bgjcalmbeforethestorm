@@ -52,6 +52,8 @@ y_sort_enabled = true
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_m64ys")]
 position = Vector2(130, -21)
 
+[node name="NPCs" type="Node2D" parent="."]
+
 [node name="Player_Room_Bldg" parent="." instance=ExtResource("2_87cis")]
 position = Vector2(48, 40)
 metadata/_edit_lock_ = true

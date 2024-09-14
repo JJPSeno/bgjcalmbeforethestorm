@@ -12,5 +12,5 @@ position = Vector2(194.456, 57.2953)
 [node name="Meteor" parent="." instance=ExtResource("3_ivbk8")]
 position = Vector2(244.743, 184.241)
 
-[node name="Player" parent="." instance=ExtResource("1_g6413")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_g6413")]
 position = Vector2(128, 85)

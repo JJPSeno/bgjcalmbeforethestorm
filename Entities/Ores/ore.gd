@@ -2,7 +2,7 @@ extends Node2D
 
 
 func interact():
-	print("You have interacted with cotton")
+	print("You have interacted with ore")
 	
 	# Temporary, change this to the actual system
 	for child in get_children():

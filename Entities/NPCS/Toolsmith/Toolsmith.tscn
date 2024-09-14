@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhhtlr14jwbcc"]
+
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_cc5uw"]
+[ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="3_8utt0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4btxy"]
+
+[node name="Toolsmith" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4btxy")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_cc5uw")]
+parent = NodePath("..")
+
+[node name="Dialogueable" parent="." instance=ExtResource("3_8utt0")]

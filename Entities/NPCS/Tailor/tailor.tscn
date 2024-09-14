@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://tkt6eauokv8m"]
+
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_egw3a"]
+[ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="3_4ehiv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8k56"]
+
+[node name="Tailor" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l8k56")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_egw3a")]
+parent = NodePath("..")
+
+[node name="Dialogueable" parent="." instance=ExtResource("3_4ehiv")]
