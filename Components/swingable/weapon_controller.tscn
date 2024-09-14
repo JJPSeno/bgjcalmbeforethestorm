@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1mh741ohxa1"]
+
+[ext_resource type="PackedScene" uid="uid://baj8bxspcyuqd" path="res://Components/swingable/great-sword.tscn" id="1_8gb4s"]
+[ext_resource type="Script" path="res://Components/swingable/weapon_controller.gd" id="1_urtr3"]
+[ext_resource type="PackedScene" uid="uid://yxk4bbfl2njk" path="res://Components/swingable/average-sword.tscn" id="2_gwimb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wpqcv"]
+radius = 31.0
+height = 93.51
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71wxg"]
+
+[node name="WeaponController" type="Node2D"]
+position = Vector2(0, -1)
+rotation = 3.14159
+script = ExtResource("1_urtr3")
+
+[node name="Great Sword" parent="." instance=ExtResource("1_8gb4s")]
+
+[node name="Weapon" parent="Great Sword" index="0"]
+position = Vector2(0, -20)
+rotation = 1.5708
+
+[node name="CollisionShape2D" parent="Great Sword/Weapon" index="0"]
+position = Vector2(-4.405, 0)
+shape = SubResource("CapsuleShape2D_wpqcv")
+
+[node name="Average Sword" parent="." instance=ExtResource("2_gwimb")]
+
+[node name="Weapon" parent="Average Sword" index="3"]
+position = Vector2(0, -20)
+rotation = 1.5708
+
+[node name="CollisionShape2D" parent="Average Sword/Weapon" index="0"]
+shape = SubResource("CapsuleShape2D_71wxg")
+
+[editable path="Great Sword"]
+[editable path="Great Sword/Weapon"]
+[editable path="Average Sword"]
+[editable path="Average Sword/Weapon"]

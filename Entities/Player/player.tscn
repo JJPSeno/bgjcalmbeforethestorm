@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_r6anq"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="2_afvag"]
-[ext_resource type="PackedScene" uid="uid://bvoyu028emjgu" path="res://Entities/Player/Weapon/weapon.tscn" id="3_cl26a"]
-[ext_resource type="PackedScene" uid="uid://baj8bxspcyuqd" path="res://Components/swingable/great-sword.tscn" id="4_33clm"]
+[ext_resource type="PackedScene" uid="uid://d1mh741ohxa1" path="res://Components/swingable/weapon_controller.tscn" id="3_77hlt"]
 [ext_resource type="Script" path="res://Components/health/health.gd" id="4_fwab0"]
-[ext_resource type="PackedScene" uid="uid://yxk4bbfl2njk" path="res://Components/swingable/average-sword.tscn" id="5_ns5ba"]
 [ext_resource type="PackedScene" uid="uid://cs5t8xml0fug2" path="res://Components/health/healthbar.tscn" id="5_y0p13"]
 [ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="6_qe7xw"]
 [ext_resource type="PackedScene" uid="uid://cro6pn861updj" path="res://Components/walksound/walksound.tscn" id="9_kimv4"]
@@ -118,16 +116,7 @@ offset = Vector2(0, 16)
 
 [node name="WeaponPivot" type="Node2D" parent="."]
 
-[node name="Weapon" parent="WeaponPivot" instance=ExtResource("3_cl26a")]
-position = Vector2(0, 24)
-
-[node name="Great Sword" parent="WeaponPivot" instance=ExtResource("4_33clm")]
-scale = Vector2(1, -1)
-
-[node name="Average Sword" parent="WeaponPivot" instance=ExtResource("5_ns5ba")]
-visible = false
-position = Vector2(0, 4)
-scale = Vector2(1, -1)
+[node name="WeaponController" parent="WeaponPivot" instance=ExtResource("3_77hlt")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
@@ -141,7 +130,6 @@ position = Vector2(0, -33)
 scale = Vector2(0.246558, 0.246558)
 
 [node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_qe7xw")]
-visible = false
 target = NodePath("../Bobble Target")
 
 [node name="Walksound" parent="." instance=ExtResource("9_kimv4")]

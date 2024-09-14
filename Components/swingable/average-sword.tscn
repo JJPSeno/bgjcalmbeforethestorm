@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Components/swingable/swingable.gd" id="1_qh5ec"]
 [ext_resource type="Texture2D" uid="uid://cal7voksesruw" path="res://Assets/weapons/averagesword.png" id="2_pnce8"]
 [ext_resource type="AudioStream" uid="uid://cw4jk246rikyi" path="res://Assets/sounds/small_sword.wav" id="2_yl16r"]
+[ext_resource type="PackedScene" uid="uid://bvoyu028emjgu" path="res://Entities/Player/Weapon/weapon.tscn" id="3_w33yq"]
 
 [sub_resource type="Animation" id="Animation_mmj56"]
 length = 0.001
@@ -232,3 +233,5 @@ libraries = {
 }
 autoplay = "default"
 speed_scale = 2.2
+
+[node name="Weapon" parent="." instance=ExtResource("3_w33yq")]

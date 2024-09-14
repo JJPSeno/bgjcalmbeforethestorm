@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwtmft1bmes0x"]
+[gd_scene load_steps=7 format=3 uid="uid://cwtmft1bmes0x"]
 
+[ext_resource type="Script" path="res://Entities/Ores/ore.gd" id="1_jp8q8"]
 [ext_resource type="Texture2D" uid="uid://rcnkr48es4qu" path="res://Assets/entities/ores.png" id="1_r386m"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_vs368"]
 [ext_resource type="PackedScene" uid="uid://4esshgoc0dc2" path="res://Components/static-erbody/OreStaticBody.tscn" id="3_k853y"]
@@ -12,12 +13,15 @@ region = Rect2(32, 0, 32, 32)
 size = Vector2(47, 33)
 
 [node name="Ore2" type="Node2D"]
+script = ExtResource("1_jp8q8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_2hqih")
 
 [node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_vs368")]
+collision_layer = 16
+collision_mask = 4
 parent = NodePath("..")
 
 [node name="CollisionShape2D" parent="Interactable" index="0"]

@@ -8,9 +8,10 @@ var direction := Vector2.ZERO
 var target_velocity := Vector2.ZERO
 var current_facing : int
 var can_swing := true
+var weapon: Area2D
 
+@onready var weapon_controller: Node2D = $WeaponPivot/WeaponController
 @onready var weapon_pivot: Node2D = $WeaponPivot
-@onready var weapon: Area2D = $WeaponPivot/Weapon
 @onready var animated_sprite_2d: AnimatedSprite2D = $"Bobble Target/AnimatedSprite2D"
 @onready var bobbeable = $Bobbeable
 @onready var walksound = $Walksound
@@ -19,6 +20,8 @@ enum FacingDirection {UP, RIGHT, DOWN, LEFT}
 
 
 func _ready() -> void:
+	weapon_controller.connect("weapon_changed", _on_weapon_changed)
+	weapon = weapon_controller.return_current_weapon()
 	weapon.monitorable = false
 	weapon.monitoring = false
 	current_facing = FacingDirection.DOWN
@@ -37,7 +40,6 @@ func _input(event: InputEvent) -> void:
 			
 	if event.is_action_pressed("hit") and can_swing:
 		swing_weapon()
-
 
 
 func _physics_process(delta: float) -> void:
@@ -76,7 +78,7 @@ func swing_weapon() -> void:
 	can_swing = false
 	set_weapon_monitor(true)
 	create_weapon_active_timer()
-	for child in weapon_pivot.get_children():
+	for child in weapon_controller.get_children():
 		if child.is_visible_in_tree() and child.has_method('_on_interact'):
 			child._on_interact()
 
@@ -93,7 +95,12 @@ func set_weapon_monitor(value: bool):
 	weapon.monitorable = value
 	weapon.monitoring = value
 
+
 func _on_timer_timeout(timer: Timer) -> void:
 	can_swing = true
 	set_weapon_monitor(false)
 	timer.queue_free()
+
+
+func _on_weapon_changed(new_weapon: Area2D) -> void:
+	weapon = new_weapon

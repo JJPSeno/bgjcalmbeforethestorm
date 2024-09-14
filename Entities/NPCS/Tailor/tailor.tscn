@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://tkt6eauokv8m"]
+[gd_scene load_steps=10 format=3 uid="uid://tkt6eauokv8m"]
 
+[ext_resource type="Script" path="res://Entities/NPCS/Tailor/tailor.gd" id="1_crrqw"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_yht4l"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_egw3a"]
-[ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="3_4ehiv"]
+[ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="3_v85ut"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5aaa"]
 atlas = ExtResource("1_yht4l")
@@ -41,12 +42,17 @@ animations = [{
 }]
 
 [node name="Tailor" type="Node2D"]
+script = ExtResource("1_crrqw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l8k56")
 speed_scale = 0.0
 
 [node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_egw3a")]
+collision_layer = 32
+collision_mask = 12
 parent = NodePath("..")
 
-[node name="Dialogueable" parent="." instance=ExtResource("3_4ehiv")]
+[node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_v85ut")]
+target = NodePath("../AnimatedSprite2D")
+is_bobbing = true
