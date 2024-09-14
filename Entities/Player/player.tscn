@@ -121,6 +121,7 @@ offset = Vector2(0, 16)
 position = Vector2(0, 24)
 
 [node name="Great Sword" parent="WeaponPivot" instance=ExtResource("4_33clm")]
+visible = false
 scale = Vector2(1, -1)
 
 [node name="Average Sword" parent="WeaponPivot" instance=ExtResource("5_ns5ba")]
