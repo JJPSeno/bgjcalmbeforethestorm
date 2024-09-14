@@ -51,7 +51,7 @@ speed_scale = 0.0
 [node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_egw3a")]
 collision_layer = 32
 collision_mask = 12
-parent = NodePath("../AnimatedSprite2D")
+parent = NodePath("..")
 
 [node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_v85ut")]
 target = NodePath("../AnimatedSprite2D")

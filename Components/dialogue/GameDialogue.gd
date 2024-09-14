@@ -43,7 +43,6 @@ func set_quest(str:String, value):
 func start_quest(job: String, level: String) -> bool:
 	QuestSystem.emit_signal("start_"+job+"_quest_"+level)
 	QuestSystem.is_questing = true
-	QuestSystem.current_quest_giver = job
 	return true
 
 

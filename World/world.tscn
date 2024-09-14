@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=27 format=4 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
@@ -45,14 +45,8 @@ completion = "start_quest(\"toolsmith\",\"1\")"
 
 [sub_resource type="Resource" id="Resource_hm1mh"]
 script = ExtResource("13_0iccr")
-condition = "check_is_questing(\"toolsmith\")"
-text = "Ayt, hop to it"
-completion = ""
-
-[sub_resource type="Resource" id="Resource_d4bok"]
-script = ExtResource("13_0iccr")
 condition = ""
-text = "Enjoy your quest!"
+text = "Ayt, hop to it"
 completion = ""
 
 [sub_resource type="Resource" id="Resource_1b0n7"]
@@ -150,7 +144,7 @@ position = Vector2(113, 205.5)
 
 [node name="Dialogueable" parent="Toolsmithery/Toolsmith" instance=ExtResource("12_4n65c")]
 position = Vector2(0, -21)
-dialogues = Array[ExtResource("13_0iccr")]([SubResource("Resource_ij7k2"), SubResource("Resource_hm1mh"), SubResource("Resource_d4bok")])
+dialogues = Array[ExtResource("13_0iccr")]([SubResource("Resource_ij7k2"), SubResource("Resource_hm1mh")])
 
 [node name="Ore Biome" type="Node2D" parent="."]
 y_sort_enabled = true
