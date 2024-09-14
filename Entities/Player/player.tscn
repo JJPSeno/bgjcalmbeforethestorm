@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhnoos5wf8m37"]
+[gd_scene load_steps=17 format=3 uid="uid://bhnoos5wf8m37"]
 
 [ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_r6anq"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="2_afvag"]
 [ext_resource type="PackedScene" uid="uid://bvoyu028emjgu" path="res://Entities/Player/Weapon/weapon.tscn" id="3_cl26a"]
 [ext_resource type="Script" path="res://Components/health/health.gd" id="4_fwab0"]
 [ext_resource type="PackedScene" uid="uid://cs5t8xml0fug2" path="res://Components/health/healthbar.tscn" id="5_y0p13"]
+[ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="6_qe7xw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dn3k"]
 
@@ -101,8 +102,12 @@ script = ExtResource("1_r6anq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1dn3k")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -18)
+[node name="Bobble Target" type="Node2D" parent="."]
+position = Vector2(0, 14)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bobble Target"]
+texture_repeat = 1
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_ub51t")
 animation = &"face_left"
 autoplay = "face_down"
@@ -123,3 +128,7 @@ script = ExtResource("4_fwab0")
 modulate = Color(1, 1, 1, 0.584314)
 position = Vector2(0, -33)
 scale = Vector2(0.246558, 0.246558)
+
+[node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_qe7xw")]
+visible = false
+target = NodePath("../Bobble Target")
