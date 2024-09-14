@@ -48,7 +48,3 @@ func start_quest(job: String, level: String) -> bool:
 
 func check_quest_toolsmith_1() -> bool:
 	return (QuestSystem.is_questing == false) && (QuestSystem.toolsmith_level == 1)
-
-
-func check_is_questing(job: String) -> bool:
-	return (QuestSystem.is_questing == true) && (QuestSystem.current_quest_giver == job)

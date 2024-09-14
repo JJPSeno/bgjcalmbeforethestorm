@@ -51,22 +51,16 @@ completion = ""
 
 [sub_resource type="Resource" id="Resource_1b0n7"]
 script = ExtResource("13_0iccr")
-condition = "check_quest_toolsmith_1()"
-text = "Howdy!
+condition = "get_quest(\"bad_cotton\") == null"
+text = "Ouch
 ---
-I'd love to smith some tools.
----
-Could you help gather some ores for me?
----
-I just need enough material from 3 ores.
----
-I'll give you a nifty screwdriver in return!"
-completion = "start_quest(\"toolsmith\",\"1\")"
+My kind will never talk to you again"
+completion = "set_quest(\"bad_cotton\",true)"
 
 [sub_resource type="Resource" id="Resource_618ed"]
 script = ExtResource("13_0iccr")
-condition = "check_is_questing(\"toolsmith\")"
-text = "Ayt, hop to it"
+condition = ""
+text = "Pain"
 completion = ""
 
 [sub_resource type="Resource" id="Resource_t4kg8"]
