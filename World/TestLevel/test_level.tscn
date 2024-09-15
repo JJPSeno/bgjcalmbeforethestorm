@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://c66o8lh8t5n5"]
+[gd_scene load_steps=8 format=3 uid="uid://c66o8lh8t5n5"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_g6413"]
 [ext_resource type="PackedScene" uid="uid://w03ka4ghj5jh" path="res://Entities/Cotton/Cotton.tscn" id="2_lbnyw"]
 [ext_resource type="PackedScene" uid="uid://vyrr7a6mt5kv" path="res://Entities/Meteor/Meteor.tscn" id="3_ivbk8"]
 [ext_resource type="PackedScene" uid="uid://b53vr80xvjhbe" path="res://Entities/Enemies/Zombie/zombie.tscn" id="4_hatjw"]
 [ext_resource type="PackedScene" uid="uid://bhhtlr14jwbcc" path="res://Entities/NPCS/Toolsmith/Toolsmith.tscn" id="5_tmeet"]
+[ext_resource type="PackedScene" uid="uid://ddwv800srjdms" path="res://Entities/NPCS/Vaillager/villager.tscn" id="6_52b2l"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_btyo2"]
+vertices = PackedVector2Array(239.508, -554.031, 835.602, -570.953, 1862.71, -247.32, 1051.52, 1061.45, -131.297, 1403.22, -737.391, 365.633, -218.328, -424.359, -831.773, -257.68)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(6, 5, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(238, -564, 837, -581, 1878, -253, 1058, 1070, -136, 1415, -747, 369, -843, -265, -221, -434)])
 
 [node name="TestLevel" type="Node2D"]
 
@@ -15,7 +21,19 @@ position = Vector2(194.456, 57.2953)
 position = Vector2(244.743, 184.241)
 
 [node name="Zombie" parent="." instance=ExtResource("4_hatjw")]
-position = Vector2(313.334, 102.217)
+position = Vector2(202, -88)
+
+[node name="Zombie2" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(365, -67)
+
+[node name="Zombie3" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(297, 48)
+
+[node name="Zombie4" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(-79, 14)
+
+[node name="Zombie5" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(444, 73)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_g6413")]
 position = Vector2(128, 85)
@@ -23,3 +41,22 @@ collision_mask = 185
 
 [node name="Toolsmith" parent="." instance=ExtResource("5_tmeet")]
 position = Vector2(164, 263)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-153, -283)
+navigation_polygon = SubResource("NavigationPolygon_btyo2")
+
+[node name="Villager2" parent="." instance=ExtResource("6_52b2l")]
+position = Vector2(386, 252)
+
+[node name="Villager" parent="." instance=ExtResource("6_52b2l")]
+position = Vector2(348, 138)
+
+[node name="Villager3" parent="." instance=ExtResource("6_52b2l")]
+position = Vector2(27, 415)
+
+[node name="Villager4" parent="." instance=ExtResource("6_52b2l")]
+position = Vector2(407, 327)
+
+[node name="Villager5" parent="." instance=ExtResource("6_52b2l")]
+position = Vector2(462, 154)
