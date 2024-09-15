@@ -23,9 +23,25 @@ func set_current_dialogue(diag:Dialogueable):
 	set_process(true)
 
 func _process(delta: float) -> void:
+	"""
+	This system checks if a player walks away
+	from the node
+	"""
 	if !_player:
 		_player = get_tree().get_nodes_in_group("player")[0]
 	var dist_sqr = _player.global_position\
 		.distance_squared_to(current_target.global_position)
 	if dist_sqr >= 2800:
+		
+		"""
+		The code below checks if this is the "last" conversation
+		in the bubble. In which case - walking away is the same as
+		Completing it
+		"""
+		if current_dialogue and \
+			current_dialogue.current_diag and \
+			not(current_dialogue.current_diag.next()):
+			current_dialogue.current_diag.diag.on_convo_complete()
 		current_dialogue.unload()
+		current_dialogue = null
+		set_process(false)

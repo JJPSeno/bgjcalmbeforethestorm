@@ -11,7 +11,7 @@ enum Weapons {AVG, GREAT}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GameManager.weapon_is_upgraded.connect(_on_weapon_upgraded)
+	QuestSystem.finish_toolsmith_quest_2.connect(_on_weapon_upgraded)
 	average_sword_node.visible = false
 	average_sword.monitorable = false
 	average_sword.monitoring = false

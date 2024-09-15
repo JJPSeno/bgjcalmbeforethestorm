@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgc0kkf3mp0fy"]
+[gd_scene load_steps=8 format=3 uid="uid://cgc0kkf3mp0fy"]
 
 [ext_resource type="Texture2D" uid="uid://rcnkr48es4qu" path="res://Assets/entities/ores.png" id="1_noew3"]
 [ext_resource type="Script" path="res://Entities/Ores/ore.gd" id="1_ulp8x"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_cri4l"]
 [ext_resource type="PackedScene" uid="uid://4esshgoc0dc2" path="res://Components/static-erbody/OreStaticBody.tscn" id="4_m8o0w"]
+[ext_resource type="AudioStream" uid="uid://dq20isjrwmw10" path="res://Assets/sounds/ore_hit.mp3" id="5_8pkrj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ddtdm"]
 atlas = ExtResource("1_noew3")
@@ -21,7 +22,6 @@ scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_ddtdm")
 
 [node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_cri4l")]
-collision_layer = 16
 collision_mask = 4
 parent = NodePath("..")
 
@@ -30,5 +30,8 @@ position = Vector2(3.5, 6.5)
 shape = SubResource("RectangleShape2D_kqy8f")
 
 [node name="OreStaticBody" parent="." instance=ExtResource("4_m8o0w")]
+
+[node name="OreHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8pkrj")
 
 [editable path="Interactable"]

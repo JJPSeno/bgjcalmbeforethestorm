@@ -44,10 +44,9 @@ func _on_interact():
 	if current_diag == null:
 		run_dialogue_selection()
 	if not current_diag.next():
+		current_diag.diag.on_convo_complete()
 		unload()
 		return
-	if current_diag.remaining <= 0:
-		current_diag.diag.on_convo_complete()
 	label.text = current_diag.text
 	label.show()
 
