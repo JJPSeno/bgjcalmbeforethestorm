@@ -100,7 +100,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxsv8"]
 size = Vector2(28, 22)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["zom_target"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 57

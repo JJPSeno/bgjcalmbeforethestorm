@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://ddwv800srjdms"]
+
+[ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_8k7qi"]
+[ext_resource type="Script" path="res://Entities/NPCS/Vaillager/villager.gd" id="1_akvpk"]
+[ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="2_651eq"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="4_52o4j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3v2q"]
+atlas = ExtResource("1_8k7qi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7vcc"]
+atlas = ExtResource("1_8k7qi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6o8p"]
+atlas = ExtResource("1_8k7qi")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42tci"]
+atlas = ExtResource("1_8k7qi")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ople"]
+atlas = ExtResource("1_8k7qi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvwvm"]
+atlas = ExtResource("1_8k7qi")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnrx6"]
+atlas = ExtResource("1_8k7qi")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0elk"]
+atlas = ExtResource("1_8k7qi")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qyjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3v2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7vcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6o8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42tci")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ople")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvwvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnrx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0elk")
+}],
+"loop": true,
+"name": &"zombie",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwcea"]
+size = Vector2(28, 22)
+
+[node name="Villager" type="Node2D" groups=["zom_target"]]
+script = ExtResource("1_akvpk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4qyjr")
+autoplay = "default"
+speed_scale = 0.0
+
+[node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_651eq")]
+target = NodePath("../AnimatedSprite2D")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_52o4j")]
+collision_layer = 32
+collision_mask = 128
+parent = NodePath("..")
+
+[node name="CollisionShape2D" parent="Interactable" index="0"]
+shape = SubResource("RectangleShape2D_dwcea")
+
+[editable path="Interactable"]

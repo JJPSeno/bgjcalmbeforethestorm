@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
 [ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
-[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_5spr1"]
+[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/Carpenter/carpenter.tscn" id="5_5spr1"]
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
 [ext_resource type="PackedScene" uid="uid://tkt6eauokv8m" path="res://Entities/NPCS/Tailor/tailor.tscn" id="6_dqhfu"]
 [ext_resource type="PackedScene" uid="uid://blhugsrkjmffk" path="res://World/Buildings/Toolsmithery.tscn" id="6_trm65"]

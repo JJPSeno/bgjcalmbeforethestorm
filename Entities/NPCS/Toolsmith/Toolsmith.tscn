@@ -105,7 +105,7 @@ condition = ""
 text = "Ayt, hop to it"
 completion = ""
 
-[node name="Toolsmith" type="Node2D"]
+[node name="Toolsmith" type="Node2D" groups=["zom_target"]]
 script = ExtResource("1_8oxf5")
 
 [node name="Bobble Target" type="Node2D" parent="."]

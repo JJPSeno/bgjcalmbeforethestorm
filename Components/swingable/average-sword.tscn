@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://yxk4bbfl2njk"]
+[gd_scene load_steps=10 format=3 uid="uid://yxk4bbfl2njk"]
 
 [ext_resource type="Script" path="res://Components/swingable/swingable.gd" id="1_qh5ec"]
 [ext_resource type="Texture2D" uid="uid://cal7voksesruw" path="res://Assets/weapons/averagesword.png" id="2_pnce8"]
