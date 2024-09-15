@@ -23,28 +23,16 @@ func evaluate_visibility():
 
 func on_convo_complete():
 	if completion:
-		evalute_script(completion)
+		for item in completion.split("\n"):
+			evalute_script(item)
 	
 func evalute_script(script:String):
 	if not script:
 		return true
 	var expression = Expression.new()
-	expression.parse(script)
-
-	return expression.execute([], self)
-	
-func get_quest(str:String, default=null):
-	return QuestSystem.quest_vars.get(str, default)
-	
-func set_quest(str:String, value):
-	QuestSystem.quest_vars[str] = value
-	return true
-
-func start_quest(job: String, level: String) -> bool:
-	QuestSystem.emit_signal("start_"+job+"_quest_"+level)
-	QuestSystem.is_questing = true
-	return true
-
-
-func check_quest_toolsmith_1() -> bool:
-	return (QuestSystem.is_questing == false) && (QuestSystem.toolsmith_level == 1)
+	var err = expression.parse(script)
+	var result = expression.execute([], QuestSystem)
+	if expression.has_execute_failed():
+		printerr("Dialogue unable to evaluate",expression.get_error_text())
+		return false
+	return result

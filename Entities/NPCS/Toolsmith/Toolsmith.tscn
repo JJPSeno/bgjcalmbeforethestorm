@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhhtlr14jwbcc"]
+[gd_scene load_steps=18 format=3 uid="uid://bhhtlr14jwbcc"]
 
 [ext_resource type="Script" path="res://Entities/NPCS/Toolsmith/toolsmith.gd" id="1_8oxf5"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_ku1qx"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_cc5uw"]
+[ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="3_8utt0"]
 [ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="4_ioblk"]
+[ext_resource type="Script" path="res://Components/dialogue/GameDialogue.gd" id="6_i6x3n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ei3yw"]
 atlas = ExtResource("1_ku1qx")
@@ -41,6 +43,62 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_ij7k2"]
+script = ExtResource("6_i6x3n")
+condition = "not(active_quest) && toolsmith_level == 1"
+text = "Howdy!
+---
+I'd love to smith some tools before that damn storm arrives
+---
+Could you help gather some ores for me?
+---
+I just need enough material from 3 ores
+---
+I'll give you a nifty screwdriver in return!"
+completion = "start_quest(\"toolsmith\",1)"
+
+[sub_resource type="Resource" id="Resource_bq2n2"]
+script = ExtResource("6_i6x3n")
+condition = "active_quest == \"toolsmith_1\" and harvested_ores >= ORES_TO_HARVEST"
+text = "That's some mighty fine ores you got for me
+---
+Here, the screwdriver like I promised"
+completion = "finish_quest(\"toolsmith\",1)
+set(\"toolsmith_level\",2)"
+
+[sub_resource type="Resource" id="Resource_80sdy"]
+script = ExtResource("6_i6x3n")
+condition = "not(active_quest) and toolsmith_level == 2"
+text = "Oh, you're back
+---
+That screwdriver working out for you?
+---
+It's not? I can make you an even bigger screw driver.
+---
+Bring me an ore from the giant meteor, it should be southwest from the ores"
+completion = "start_quest(\"toolsmith\",2)"
+
+[sub_resource type="Resource" id="Resource_hm1mh"]
+script = ExtResource("6_i6x3n")
+condition = "active_quest == \"toolsmith_2\" and has_meteor"
+text = "Shiiieeezz, you actually got it cuz
+---
+Here you go, the giant screwdriver like I promised"
+completion = "finish_quest(\"toolsmith\",2)
+set(\"toolsmith_level\",3)"
+
+[sub_resource type="Resource" id="Resource_wd4ug"]
+script = ExtResource("6_i6x3n")
+condition = "toolsmith_level == 3"
+text = "Aight, I've got enough ore to keep me preoccupied through the hard times we about to have"
+completion = ""
+
+[sub_resource type="Resource" id="Resource_vgy0t"]
+script = ExtResource("6_i6x3n")
+condition = ""
+text = "Ayt, hop to it"
+completion = ""
+
 [node name="Toolsmith" type="Node2D"]
 script = ExtResource("1_8oxf5")
 
@@ -56,3 +114,7 @@ parent = NodePath("..")
 [node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_ioblk")]
 target = NodePath("../AnimatedSprite2D")
 is_bobbing = true
+
+[node name="Dialogueable" parent="." instance=ExtResource("3_8utt0")]
+position = Vector2(0, -21)
+dialogues = Array[ExtResource("6_i6x3n")]([SubResource("Resource_ij7k2"), SubResource("Resource_bq2n2"), SubResource("Resource_80sdy"), SubResource("Resource_hm1mh"), SubResource("Resource_wd4ug"), SubResource("Resource_vgy0t")])

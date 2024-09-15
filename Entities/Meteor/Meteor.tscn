@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://vyrr7a6mt5kv"]
+[gd_scene load_steps=9 format=3 uid="uid://vyrr7a6mt5kv"]
 
 [ext_resource type="Script" path="res://Entities/Meteor/meteor.gd" id="1_tui2r"]
 [ext_resource type="Texture2D" uid="uid://bc2j85wdvtsn6" path="res://Assets/entities/meteor.png" id="1_ymg6b"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="3_35ka4"]
 [ext_resource type="PackedScene" uid="uid://5fbrcvpgyc0l" path="res://Components/static-erbody/MeteorStaticBody.tscn" id="4_i1ibn"]
+[ext_resource type="AudioStream" uid="uid://dq20isjrwmw10" path="res://Assets/sounds/ore_hit.mp3" id="5_0c41q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma765"]
 atlas = ExtResource("1_ymg6b")
@@ -25,6 +26,10 @@ scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_ma765")
 offset = Vector2(32, 4)
 
+[node name="MeteorStaticBody" parent="Meteor" instance=ExtResource("4_i1ibn")]
+position = Vector2(39, 0)
+scale = Vector2(0.5, 0.5)
+
 [node name="Tail" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(35, 4)
@@ -41,6 +46,10 @@ parent = NodePath("..")
 position = Vector2(-10, 14)
 shape = SubResource("CircleShape2D_ehaj1")
 
-[node name="MeteorStaticBody" parent="." instance=ExtResource("4_i1ibn")]
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_0c41q")
+volume_db = 10.0
+pitch_scale = 0.3
 
 [editable path="Interactable"]

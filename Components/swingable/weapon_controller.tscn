@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1mh741ohxa1"]
+[gd_scene load_steps=6 format=3 uid="uid://dgngt6uo4bldn"]
 
 [ext_resource type="PackedScene" uid="uid://baj8bxspcyuqd" path="res://Components/swingable/great-sword.tscn" id="1_8gb4s"]
 [ext_resource type="Script" path="res://Components/swingable/weapon_controller.gd" id="1_urtr3"]
@@ -27,7 +27,7 @@ shape = SubResource("CapsuleShape2D_wpqcv")
 
 [node name="Average Sword" parent="." instance=ExtResource("2_gwimb")]
 
-[node name="Weapon" parent="Average Sword" index="3"]
+[node name="Weapon" parent="Average Sword" index="4"]
 position = Vector2(0, -20)
 rotation = 1.5708
 
