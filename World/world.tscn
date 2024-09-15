@@ -1,17 +1,32 @@
-[gd_scene load_steps=13 format=4 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=20 format=4 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
+[ext_resource type="Texture2D" uid="uid://c3gfnh0g4e1fo" path="res://Assets/ui/tile_0093.png" id="3_8g2qe"]
 [ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_5spr1"]
+=======
+[ext_resource type="Texture2D" uid="uid://c0si6reeua4hr" path="res://Assets/ui/tile_0086.png" id="4_kn0lf"]
+[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/Carpenter/carpenter.tscn" id="5_5spr1"]
+>>>>>>> 9b4a09124caeb050f0cc89541f7e33ab4f28f931
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
+[ext_resource type="Texture2D" uid="uid://01i5tb3ruqjw" path="res://Assets/ui/tile_0120.png" id="5_o2isv"]
 [ext_resource type="PackedScene" uid="uid://tkt6eauokv8m" path="res://Entities/NPCS/Tailor/tailor.tscn" id="6_dqhfu"]
+[ext_resource type="Texture2D" uid="uid://4pqkpcnqsry" path="res://Assets/ui/tile_0121.png" id="6_pa8ak"]
 [ext_resource type="PackedScene" uid="uid://blhugsrkjmffk" path="res://World/Buildings/Toolsmithery.tscn" id="6_trm65"]
 [ext_resource type="TileSet" uid="uid://pwoj3a44q01" path="res://Config/Nature Set.tres" id="7_2tcky"]
+[ext_resource type="Texture2D" uid="uid://xcbxqpukbaqk" path="res://Assets/ui/tile_0122.png" id="7_fkq4t"]
 [ext_resource type="PackedScene" uid="uid://bhhtlr14jwbcc" path="res://Entities/NPCS/Toolsmith/Toolsmith.tscn" id="7_s10ub"]
+[ext_resource type="Texture2D" uid="uid://d2tt6u1ets485" path="res://Assets/ui/tile_0077.png" id="8_m0uee"]
 [ext_resource type="PackedScene" uid="uid://cwtmft1bmes0x" path="res://Entities/Ores/Ore2.tscn" id="8_naayg"]
 [ext_resource type="PackedScene" uid="uid://cgc0kkf3mp0fy" path="res://Entities/Ores/Ore1.tscn" id="9_dikfu"]
 [ext_resource type="PackedScene" uid="uid://vyrr7a6mt5kv" path="res://Entities/Meteor/Meteor.tscn" id="9_qb68i"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_cl0dd"]
+vertices = PackedVector2Array(2765.35, -1522.98, 2843.92, 468.313, 2552.24, 1220.35, 408.539, 2089.79, -1566.75, 1886.27, -2385.91, 1391.8, -2690.44, -386.609, -1926.15, -1466.94, -64.5469, -1827.89)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1932, -1476, -65, -1838, 2775, -1532, 2854, 470, 2560, 1228, 410, 2100, -1570, 1896, -2395, 1398, -2701, -389)])
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -110,3 +125,42 @@ z_index = -10
 color = Color(0.3186, 0.54, 0.34812, 1)
 polygon = PackedVector2Array(132, 4048, 4721, 2957, 5601, 901, 4020, -2547, 420, -2754, -3639, -1829, -4412, 515, -3217, 2791)
 metadata/_edit_lock_ = true
+
+[node name="ZSpawner" type="TileMapLayer" parent="World"]
+tile_map_data = PackedByteArray("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BgDj//v/AwAAAAAABgDk//b/AwAAAAAABgDk//f/AwAAAAAABgDk//j/AwAAAAAABgAEABkAAwAAAAAABgAEABoAAwAAAAAABgAEABsAAwAAAAAABgAEAB4AAwAAAAAABgAEAB8AAwAAAAAABgAFABkAAwAAAAAABgAFABsAAwAAAAAABgAFAB0AAwAAAAAABgAFAB4AAwAAAAAABgAGABcAAwAAAAAABgAGABwAAwAAAAAABgAGACEAAwAAAAAABgAHABcAAwAAAAAABgAHABoAAwAAAAAABgAHAB0AAwAAAAAABgAHACAAAwAAAAAABgAHACEAAwAAAAAABgAIABwAAwAAAAAABgAIAB8AAwAAAAAABgAIACIAAwAAAAAABgAJABsAAwAAAAAABgAJABwAAwAAAAAABgAJAB4AAwAAAAAABgAKABcAAwAAAAAABgAKAB0AAwAAAAAABgAKAB4AAwAAAAAABgAKAB8AAwAAAAAABgAKACAAAwAAAAAABgAKACIAAwAAAAAABgAZACMAAwAAAAAABgAZACYAAwAAAAAABgAZACkAAwAAAAAABgAaACMAAwAAAAAABgAaACYAAwAAAAAABgAaACoAAwAAAAAABgAbACEAAwAAAAAABgAbACQAAwAAAAAABgAbACUAAwAAAAAABgAbACcAAwAAAAAABgAcACEAAwAAAAAABgAcACYAAwAAAAAABgAcACoAAwAAAAAABgAdACUAAwAAAAAABgAdACgAAwAAAAAABgAeACIAAwAAAAAABgAeACQAAwAAAAAABgAeACYAAwAAAAAABgAeACgAAwAAAAAABgAeACkAAwAAAAAABgAeACoAAwAAAAAABgAfACEAAwAAAAAABgAfACIAAwAAAAAABgAfACUAAwAAAAAABgAfACYAAwAAAAAABgAgACIAAwAAAAAABgAgACQAAwAAAAAABgAgACcAAwAAAAAABgAgACgAAwAAAAAABgAgACoAAwAAAAAABgAgACsAAwAAAAAABgAgACwAAwAAAAAABgAhAP//AwAAAAAABgAhAAIAAwAAAAAABgAhAAQAAwAAAAAABgAhAAYAAwAAAAAABgAhAAgAAwAAAAAABgAhAAkAAwAAAAAABgAiAAYAAwAAAAAABgAiAAcAAwAAAAAABgAiAAkAAwAAAAAABgAjAAEAAwAAAAAABgAjAAIAAwAAAAAABgAjAAMAAwAAAAAABgAjAAQAAwAAAAAABgAjAAgAAwAAAAAABgAjAAkAAwAAAAAABgAkAAQAAwAAAAAABgAkAAUAAwAAAAAABgAkAAcAAwAAAAAABgAkAAgAAwAAAAAABgAlAP//AwAAAAAABgAlAAIAAwAAAAAABgAlAAQAAwAAAAAABgAlAAUAAwAAAAAABgAlAAkAAwAAAAAABgAmAAMAAwAAAAAABgAmAAcAAwAAAAAABgD//+3/AwAAAAAABgAAAOv/AwAAAAAABgAAAOz/AwAAAAAABgABAO3/AwAAAAAABgABAO//AwAAAAAABgACAO//AwAAAAAABgADAOz/AwAAAAAABgADAO7/AwAAAAAABgADAO//AwAAAAAABgAFAOv/AwAAAAAABgAFAO//AwAAAAAABgAGAOv/AwAAAAAABgAGAOz/AwAAAAAABgDr/+7/AwAAAAAABgDr//D/AwAAAAAABgDr//X/AwAAAAAABgDr//f/AwAAAAAABgDs//H/AwAAAAAABgDs//P/AwAAAAAABgDs//b/AwAAAAAABgDs//f/AwAAAAAABgDs//j/AwAAAAAABgDt//b/AwAAAAAABgDu/+//AwAAAAAABgDu//n/AwAAAAAABgDv//L/AwAAAAAABgDv//T/AwAAAAAABgDv//X/AwAAAAAABgDw/+7/AwAAAAAABgDw//D/AwAAAAAABgDw//H/AwAAAAAABgDw//P/AwAAAAAABgDw//T/AwAAAAAABgDw//f/AwAAAAAABgA=")
+tile_set = ExtResource("7_2tcky")
+
+[node name="Villagers" type="Node2D" parent="."]
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_cl0dd")
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(37, -132)
+
+[node name="Tile0093" type="Sprite2D" parent="Buttons"]
+position = Vector2(190, 150)
+texture = ExtResource("3_8g2qe")
+
+[node name="Tile0086" type="Sprite2D" parent="Buttons"]
+position = Vector2(20, 130)
+texture = ExtResource("4_kn0lf")
+
+[node name="Tile0120" type="Sprite2D" parent="Buttons"]
+position = Vector2(0, 150)
+texture = ExtResource("5_o2isv")
+
+[node name="Tile0121" type="Sprite2D" parent="Buttons"]
+position = Vector2(20, 150)
+texture = ExtResource("6_pa8ak")
+
+[node name="Tile0122" type="Sprite2D" parent="Buttons"]
+position = Vector2(40, 150)
+texture = ExtResource("7_fkq4t")
+
+[node name="Tile0077" type="Sprite2D" parent="Buttons"]
+position = Vector2(210, 150)
+texture = ExtResource("8_m0uee")
