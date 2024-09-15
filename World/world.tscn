@@ -1,11 +1,12 @@
-[gd_scene load_steps=20 format=4 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=21 format=4 uid="uid://oeljvrbyao71"]
 
+[ext_resource type="Script" path="res://World/world.gd" id="1_2vje7"]
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
 [ext_resource type="Texture2D" uid="uid://c3gfnh0g4e1fo" path="res://Assets/ui/tile_0093.png" id="3_8g2qe"]
 [ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
 [ext_resource type="Texture2D" uid="uid://c0si6reeua4hr" path="res://Assets/ui/tile_0086.png" id="4_kn0lf"]
-[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_5spr1"]
+[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/Carpenter/carpenter.tscn" id="5_5spr1"]
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
 [ext_resource type="Texture2D" uid="uid://01i5tb3ruqjw" path="res://Assets/ui/tile_0120.png" id="5_o2isv"]
 [ext_resource type="PackedScene" uid="uid://tkt6eauokv8m" path="res://Entities/NPCS/Tailor/tailor.tscn" id="6_dqhfu"]
@@ -26,9 +27,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1932, -1476, -65, -183
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_2vje7")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_m64ys")]
-position = Vector2(138, 101)
+position = Vector2(141, 110)
 
 [node name="NPCs" type="Node2D" parent="."]
 
@@ -160,3 +162,14 @@ texture = ExtResource("7_fkq4t")
 [node name="Tile0077" type="Sprite2D" parent="Buttons"]
 position = Vector2(210, 150)
 texture = ExtResource("8_m0uee")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(0.54, 0, 0.036, 0.462745)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
