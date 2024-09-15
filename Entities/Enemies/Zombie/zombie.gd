@@ -13,7 +13,6 @@ func _ready() -> void:
 	target = all_targets[0]
 	
 func _physics_process(delta: float) -> void:
-	print(target.name)
 	var direction = Vector3.ZERO
 	for candidate in all_targets:
 		if candidate == target:
@@ -35,5 +34,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func interact():
-	print_debug("ya hit me")
 	queue_free()

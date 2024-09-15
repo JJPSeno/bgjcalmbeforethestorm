@@ -25,6 +25,12 @@ func _ready() -> void:
 
 
 func change_weapon(weapon: Weapons) -> void:
+	average_sword_node.visible = false
+	average_sword.monitorable = false
+	average_sword.monitoring = false
+	great_sword_node.visible = false
+	great_sword.monitorable = false
+	great_sword.monitoring = false
 	match weapon:
 		Weapons.AVG:
 			great_sword_node.visible = false
