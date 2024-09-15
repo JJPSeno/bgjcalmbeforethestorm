@@ -96,6 +96,10 @@ func set_weapon_monitor(value: bool):
 	weapon.monitoring = value
 
 
+func hurt():
+	prints("owwww")
+
+
 func _on_timer_timeout(timer: Timer) -> void:
 	can_swing = true
 	set_weapon_monitor(false)
