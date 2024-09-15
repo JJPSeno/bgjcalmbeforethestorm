@@ -36,33 +36,6 @@ position = Vector2(141, 110)
 position = Vector2(48, 40)
 metadata/_edit_lock_ = true
 
-[node name="Buttons" type="Node2D" parent="Player_Room_Bldg"]
-position = Vector2(-11, -172)
-
-[node name="Tile0093" type="Sprite2D" parent="Player_Room_Bldg/Buttons"]
-position = Vector2(190, 150)
-texture = ExtResource("3_8g2qe")
-
-[node name="Tile0086" type="Sprite2D" parent="Player_Room_Bldg/Buttons"]
-position = Vector2(20, 130)
-texture = ExtResource("4_kn0lf")
-
-[node name="Tile0120" type="Sprite2D" parent="Player_Room_Bldg/Buttons"]
-position = Vector2(0, 150)
-texture = ExtResource("5_o2isv")
-
-[node name="Tile0121" type="Sprite2D" parent="Player_Room_Bldg/Buttons"]
-position = Vector2(20, 150)
-texture = ExtResource("6_pa8ak")
-
-[node name="Tile0122" type="Sprite2D" parent="Player_Room_Bldg/Buttons"]
-position = Vector2(40, 150)
-texture = ExtResource("7_fkq4t")
-
-[node name="Tile0077" type="Sprite2D" parent="Player_Room_Bldg/Buttons"]
-position = Vector2(210, 150)
-texture = ExtResource("8_m0uee")
-
 [node name="Carpenter_Bldg" parent="." instance=ExtResource("4_bl0i6")]
 position = Vector2(-63, -457)
 metadata/_edit_lock_ = true
@@ -160,3 +133,30 @@ tile_set = ExtResource("7_2tcky")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_cl0dd")
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(37, -132)
+
+[node name="Tile0093" type="Sprite2D" parent="Buttons"]
+position = Vector2(190, 150)
+texture = ExtResource("3_8g2qe")
+
+[node name="Tile0086" type="Sprite2D" parent="Buttons"]
+position = Vector2(20, 130)
+texture = ExtResource("4_kn0lf")
+
+[node name="Tile0120" type="Sprite2D" parent="Buttons"]
+position = Vector2(0, 150)
+texture = ExtResource("5_o2isv")
+
+[node name="Tile0121" type="Sprite2D" parent="Buttons"]
+position = Vector2(20, 150)
+texture = ExtResource("6_pa8ak")
+
+[node name="Tile0122" type="Sprite2D" parent="Buttons"]
+position = Vector2(40, 150)
+texture = ExtResource("7_fkq4t")
+
+[node name="Tile0077" type="Sprite2D" parent="Buttons"]
+position = Vector2(210, 150)
+texture = ExtResource("8_m0uee")
