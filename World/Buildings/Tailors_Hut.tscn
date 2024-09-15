@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://be67annsivf7"]
+[gd_scene load_steps=12 format=4 uid="uid://be67annsivf7"]
 
 [ext_resource type="TileSet" uid="uid://cf55y4yeoncux" path="res://Config/Wooden House Set.tres" id="1_r6ura"]
 [ext_resource type="PackedScene" uid="uid://d1igu3fewrmqh" path="res://Entities/Door/Double_Door.tscn" id="2_hll8a"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c4817tfsja5nc" path="res://Config/furniture/BigTable.tres" id="7_jqqij"]
 [ext_resource type="Texture2D" uid="uid://dn3c8ev4wlwvd" path="res://Config/furniture/Bed.tres" id="9_ukaph"]
 [ext_resource type="Texture2D" uid="uid://cpqh7aidgfsqh" path="res://Config/furniture/SideTable.tres" id="10_juvgd"]
+[ext_resource type="PackedScene" uid="uid://ndeeb6bpi83g" path="res://Entities/Window/Window.tscn" id="11_nuleq"]
 
 [node name="Tailors_Hut" type="Node2D"]
 
@@ -20,7 +21,7 @@ tile_set = ExtResource("1_r6ura")
 
 [node name="Walls" type="TileMapLayer" parent="."]
 position = Vector2(-224, -128)
-tile_map_data = PackedByteArray("AAAHAAwAAgABAAIAAAAHAAsAAgAAAAEAAAAHAAoAAgAAAAEAAAAHAAkAAgAAAAEAAAAHAAYAAgAAAAEAAAAHAAUAAgAAAAEAAAAHAAQAAgABAAAAAAAMAAwAAgACAAMAAAALAAwAAgACAAMAAAAKAAwAAgACAAMAAAAJAAwAAgACAAMAAAAIAAwAAgACAAMAAAAOAAQAAgAGAAAAAAANAAQAAgACAAMAAAAMAAQAAgACAAMAAAALAAQAAgABAAMAAAAIAAQAAgADAAMAAAAOAAcAAgABAAEAAAAOAAYAAgAAAAEAAAAOAAUAAgAAAAEAAAAOAAwAAgACAAMAAAANAAwAAgACAAMAAAAOAAgAAgAAAAEAAAAOAAkAAgAAAAIAAAAUAAwAAgADAAIAAAATAAwAAgACAAMAAAASAAwAAgACAAMAAAARAAwAAgACAAMAAAAQAAwAAgACAAMAAAAPAAwAAgACAAMAAAAHAAcAAgAAAAEAAAAHAAgAAgAAAAEAAAAPAAcAAgADAAMAAAARAAcAAgABAAMAAAASAAcAAgACAAMAAAATAAcAAgACAAMAAAAUAAkAAgAAAAEAAAAUAAoAAgAAAAEAAAAUAAsAAgAAAAEAAAAUAAgAAgAAAAEAAAAUAAcAAgADAAEAAAAPAAQAAgACAAMAAAAQAAQAAgACAAMAAAARAAQAAgACAAMAAAASAAQAAgACAAMAAAATAAQAAgACAAMAAAAUAAQAAgADAAAAAAAUAAUAAgAAAAEAAAAUAAYAAgAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAHAAwAAgABAAIAAAAHAAsAAgAAAAEAAAAHAAoAAgAAAAEAAAAHAAkAAgAAAAEAAAAHAAYAAgAAAAEAAAAHAAUAAgAAAAEAAAAHAAQAAgABAAAAAAAMAAwAAgACAAMAAAALAAwAAgACAAMAAAAIAAwAAgADAAMAAAAOAAQAAgAGAAAAAAANAAQAAgACAAMAAAAMAAQAAgACAAMAAAALAAQAAgABAAMAAAAIAAQAAgADAAMAAAAOAAcAAgABAAEAAAAOAAYAAgAAAAEAAAAOAAUAAgAAAAEAAAAOAAwAAgACAAMAAAANAAwAAgACAAMAAAAOAAgAAgAAAAEAAAAOAAkAAgAAAAIAAAAUAAwAAgADAAIAAAATAAwAAgACAAMAAAASAAwAAgABAAMAAAAQAAwAAgADAAMAAAAPAAwAAgACAAMAAAAHAAcAAgAAAAEAAAAHAAgAAgAAAAEAAAAPAAcAAgADAAMAAAARAAcAAgABAAMAAAASAAcAAgACAAMAAAATAAcAAgACAAMAAAAUAAkAAgAAAAEAAAAUAAoAAgAAAAEAAAAUAAsAAgAAAAEAAAAUAAgAAgAAAAEAAAAUAAcAAgADAAEAAAAPAAQAAgADAAMAAAARAAQAAgABAAMAAAASAAQAAgACAAMAAAATAAQAAgACAAMAAAAUAAQAAgADAAAAAAAUAAUAAgAAAAEAAAAUAAYAAgAAAAEAAAAKAAwAAgABAAMAAAA=")
 tile_set = ExtResource("1_r6ura")
 
 [node name="Puppet" type="Sprite2D" parent="."]
@@ -74,3 +75,15 @@ position = Vector2(80, 16)
 
 [node name="Door" parent="." instance=ExtResource("2_k5vpj")]
 position = Vector2(305, 121)
+
+[node name="Window" parent="." instance=ExtResource("11_nuleq")]
+position = Vector2(80, 272)
+scale = Vector2(0.595, 0.5)
+
+[node name="Window2" parent="." instance=ExtResource("11_nuleq")]
+position = Vector2(336, 272)
+scale = Vector2(0.595, 0.5)
+
+[node name="Window3" parent="." instance=ExtResource("11_nuleq")]
+position = Vector2(304, 16)
+scale = Vector2(0.595, 0.5)

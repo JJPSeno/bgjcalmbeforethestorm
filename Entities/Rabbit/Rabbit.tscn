@@ -30,9 +30,11 @@ target = NodePath("../Bob Target")
 is_bobbing = true
 
 [node name="Bob Target" type="Node2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, 14)
 
 [node name="Sprite2D" type="Sprite2D" parent="Bob Target"]
+y_sort_enabled = true
 position = Vector2(0, -29)
 texture = SubResource("AtlasTexture_6uk2f")
 offset = Vector2(0, 16)

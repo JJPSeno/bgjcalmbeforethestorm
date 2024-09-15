@@ -20,7 +20,8 @@ func run_dialogue_selection():
 	the condition
 	"""
 	for dialogue in dialogues:
-		if dialogue.evaluate_visibility():
+		var is_dia_visible = dialogue.evaluate_visibility()
+		if is_dia_visible:
 			current_diag = GameDialogueCursor.new(dialogue)
 			current_diag
 			return

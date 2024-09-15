@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://ndeeb6bpi83g"]
+
+[ext_resource type="Texture2D" uid="uid://d2e2tblyrakkl" path="res://Config/furniture/Window-A.tres" id="1_s5oxp"]
+[ext_resource type="Script" path="res://Entities/Window/WindowEntity.gd" id="1_wqbec"]
+[ext_resource type="Texture2D" uid="uid://b6gfeut4gq4jj" path="res://Config/furniture/Window-B.tres" id="2_rliww"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="3_hao5d"]
+[ext_resource type="PackedScene" uid="uid://c5bd14fkfdxkk" path="res://Components/static-erbody/TreeStaticBody.tscn" id="4_p54hg"]
+[ext_resource type="AudioStream" uid="uid://b1ynuourvjyq7" path="res://Assets/sounds/wood_chop.wav" id="5_exk70"]
+
+[node name="Window" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_wqbec")
+
+[node name="Sprite - Boarded" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+y_sort_enabled = true
+texture = ExtResource("1_s5oxp")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+texture = ExtResource("2_rliww")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_hao5d")]
+scale = Vector2(2.24, 2.24)
+parent = NodePath("..")
+
+[node name="TreeStaticBody" parent="." instance=ExtResource("4_p54hg")]
+position = Vector2(0, -18)
+scale = Vector2(1.36, 1.96)
+
+[node name="WoodChop" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_exk70")

@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cia4xeumiqah0"]
+[gd_scene load_steps=7 format=3 uid="uid://cia4xeumiqah0"]
 
+[ext_resource type="Script" path="res://Entities/Trees/Tree.gd" id="1_07ats"]
 [ext_resource type="Texture2D" uid="uid://c47fo3rfh3yiy" path="res://Assets/entities/trees.png" id="1_v81i7"]
 [ext_resource type="PackedScene" uid="uid://c5bd14fkfdxkk" path="res://Components/static-erbody/TreeStaticBody.tscn" id="2_b7nru"]
+[ext_resource type="AudioStream" uid="uid://b1ynuourvjyq7" path="res://Assets/sounds/wood_chop.wav" id="3_e2vyx"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="5_eoqtp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3t4vk"]
 atlas = ExtResource("1_v81i7")
@@ -9,9 +12,19 @@ region = Rect2(12, 14, 96, 78)
 
 [node name="Tree 1" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_07ats")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture = SubResource("AtlasTexture_3t4vk")
 
 [node name="TreeStaticBody" parent="." instance=ExtResource("2_b7nru")]
+
+[node name="WoodChop" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_e2vyx")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("5_eoqtp")]
+position = Vector2(-5.96046e-08, 10)
+scale = Vector2(1.6, 1.4)
+parent = NodePath("..")

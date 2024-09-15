@@ -52,10 +52,15 @@ var harvested_rabbits = 0
 #endregion
 
 #region carpenter quest block
-var carpenter_level = 1
 signal start_carpenter_quest_1
 signal finish_carpenter_quest_1
-
 signal start_carpenter_quest_2
 signal finish_carpenter_quest_2
+
+const TREES_TO_HARVEST := 4
+
+var carpenter_level := 1
+var harvested_trees := 0
+var windows_upgrade_count := 5
+
 #endregion

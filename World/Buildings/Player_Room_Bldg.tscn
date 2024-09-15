@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://8w0ml10hpnxd"]
+[gd_scene load_steps=8 format=4 uid="uid://8w0ml10hpnxd"]
 
 [ext_resource type="TileSet" uid="uid://cf55y4yeoncux" path="res://Config/Wooden House Set.tres" id="1_me27x"]
 [ext_resource type="Texture2D" uid="uid://dn3c8ev4wlwvd" path="res://Config/furniture/Bed.tres" id="2_glx16"]
@@ -6,18 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://c4817tfsja5nc" path="res://Config/furniture/BigTable.tres" id="5_4n3ic"]
 [ext_resource type="PackedScene" uid="uid://dgqx7vldlp0t7" path="res://Entities/Door/Door.tscn" id="6_hb6my"]
 [ext_resource type="Texture2D" uid="uid://c80jwf7d5e567" path="res://Config/furniture/Chair.tres" id="6_i53ro"]
+[ext_resource type="PackedScene" uid="uid://ndeeb6bpi83g" path="res://Entities/Window/Window.tscn" id="7_mf1op"]
 
 [node name="Player_Room_Bldg" type="Node2D"]
 
 [node name="Floor" type="TileMapLayer" parent="."]
 position = Vector2(-224, -128)
-tile_map_data = PackedByteArray("AAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAA=")
 tile_set = ExtResource("1_me27x")
 metadata/_edit_lock_ = true
 
 [node name="Walls" type="TileMapLayer" parent="."]
 position = Vector2(-224, -128)
-tile_map_data = PackedByteArray("AAAHAAkAAgABAAIAAAAHAAgAAgAAAAEAAAAHAAcAAgAAAAEAAAAHAAYAAgAAAAEAAAAKAAkAAgACAAMAAAAJAAkAAgACAAMAAAAIAAkAAgACAAMAAAAHAAUAAgAAAAEAAAAHAAQAAgABAAAAAAAMAAkAAgADAAIAAAAMAAgAAgAAAAEAAAAMAAcAAgAAAAEAAAAMAAYAAgAAAAEAAAAMAAUAAgAAAAEAAAAMAAQAAgADAAAAAAALAAkAAgACAAMAAAALAAQAAgACAAMAAAAKAAQAAgABAAMAAAAIAAQAAgADAAMAAAA=")
+tile_map_data = PackedByteArray("AAAHAAkAAgABAAIAAAAHAAgAAgAAAAEAAAAHAAcAAgAAAAEAAAAHAAYAAgAAAAEAAAAJAAkAAgADAAMAAAAIAAkAAgACAAMAAAAHAAUAAgAAAAEAAAAHAAQAAgABAAAAAAAMAAkAAgADAAIAAAAMAAgAAgAAAAEAAAAMAAcAAgAAAAEAAAAMAAYAAgAAAAEAAAAMAAUAAgAAAAEAAAAMAAQAAgADAAAAAAALAAkAAgABAAMAAAALAAQAAgACAAMAAAAKAAQAAgABAAMAAAAIAAQAAgADAAMAAAA=")
 tile_set = ExtResource("1_me27x")
 metadata/_edit_lock_ = true
 
@@ -44,3 +45,7 @@ flip_h = true
 
 [node name="Door2" parent="." instance=ExtResource("6_hb6my")]
 position = Vector2(80, 16)
+
+[node name="Window" parent="." instance=ExtResource("7_mf1op")]
+position = Vector2(112, 176)
+scale = Vector2(0.595, 0.5)

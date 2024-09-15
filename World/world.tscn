@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=13 format=4 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
@@ -12,20 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://cwtmft1bmes0x" path="res://Entities/Ores/Ore2.tscn" id="8_naayg"]
 [ext_resource type="PackedScene" uid="uid://cgc0kkf3mp0fy" path="res://Entities/Ores/Ore1.tscn" id="9_dikfu"]
 [ext_resource type="PackedScene" uid="uid://vyrr7a6mt5kv" path="res://Entities/Meteor/Meteor.tscn" id="9_qb68i"]
-[ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="12_4n65c"]
-[ext_resource type="Script" path="res://Components/dialogue/GameDialogue.gd" id="13_0iccr"]
-
-[sub_resource type="Resource" id="Resource_687am"]
-script = ExtResource("13_0iccr")
-condition = "true"
-text = "car painter"
-completion = ""
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_m64ys")]
-position = Vector2(553, 62)
+position = Vector2(141, 110)
 
 [node name="NPCs" type="Node2D" parent="."]
 
@@ -38,10 +30,7 @@ position = Vector2(-63, -457)
 metadata/_edit_lock_ = true
 
 [node name="Carpenter" parent="Carpenter_Bldg" instance=ExtResource("5_5spr1")]
-position = Vector2(110.928, 99.745)
-
-[node name="Dialogueable" parent="Carpenter_Bldg/Carpenter" instance=ExtResource("12_4n65c")]
-dialogues = Array[ExtResource("13_0iccr")]([SubResource("Resource_687am")])
+position = Vector2(285, 114)
 
 [node name="Tailors_Hut" parent="." instance=ExtResource("5_kgqvn")]
 position = Vector2(458, -13)
