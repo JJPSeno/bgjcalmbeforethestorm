@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://oeljvrbyao71"]
+[gd_scene load_steps=22 format=4 uid="uid://oeljvrbyao71"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_2vje7"]
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c3gfnh0g4e1fo" path="res://Assets/ui/tile_0093.png" id="3_8g2qe"]
 [ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
 [ext_resource type="Texture2D" uid="uid://c0si6reeua4hr" path="res://Assets/ui/tile_0086.png" id="4_kn0lf"]
-[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/Carpenter/carpenter.tscn" id="5_5spr1"]
+[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_5spr1"]
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
 [ext_resource type="Texture2D" uid="uid://01i5tb3ruqjw" path="res://Assets/ui/tile_0120.png" id="5_o2isv"]
 [ext_resource type="PackedScene" uid="uid://tkt6eauokv8m" path="res://Entities/NPCS/Tailor/tailor.tscn" id="6_dqhfu"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cwtmft1bmes0x" path="res://Entities/Ores/Ore2.tscn" id="8_naayg"]
 [ext_resource type="PackedScene" uid="uid://cgc0kkf3mp0fy" path="res://Entities/Ores/Ore1.tscn" id="9_dikfu"]
 [ext_resource type="PackedScene" uid="uid://vyrr7a6mt5kv" path="res://Entities/Meteor/Meteor.tscn" id="9_qb68i"]
+[ext_resource type="AudioStream" uid="uid://bkohdh74hvc3o" path="res://Assets/sounds/zombie_moan.wav" id="20_86qg3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cl0dd"]
 vertices = PackedVector2Array(2765.35, -1522.98, 2843.92, 468.313, 2552.24, 1220.35, 408.539, 2089.79, -1566.75, 1886.27, -2385.91, 1391.8, -2690.44, -386.609, -1926.15, -1466.94, -64.5469, -1827.89)
@@ -173,3 +174,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ZombieMoan" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("20_86qg3")

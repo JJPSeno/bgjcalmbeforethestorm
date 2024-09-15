@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c66o8lh8t5n5"]
+[gd_scene load_steps=8 format=3 uid="uid://c66o8lh8t5n5"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_g6413"]
 [ext_resource type="PackedScene" uid="uid://w03ka4ghj5jh" path="res://Entities/Cotton/Cotton.tscn" id="2_lbnyw"]
 [ext_resource type="PackedScene" uid="uid://vyrr7a6mt5kv" path="res://Entities/Meteor/Meteor.tscn" id="3_ivbk8"]
+[ext_resource type="PackedScene" uid="uid://b53vr80xvjhbe" path="res://Entities/Enemies/Zombie/zombie.tscn" id="4_hatjw"]
 [ext_resource type="PackedScene" uid="uid://bhhtlr14jwbcc" path="res://Entities/NPCS/Toolsmith/Toolsmith.tscn" id="5_tmeet"]
 [ext_resource type="PackedScene" uid="uid://ddwv800srjdms" path="res://Entities/NPCS/Vaillager/villager.tscn" id="6_52b2l"]
 
@@ -44,3 +45,18 @@ position = Vector2(407, 327)
 
 [node name="Villager5" parent="." instance=ExtResource("6_52b2l")]
 position = Vector2(462, 154)
+
+[node name="Zombie" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(-54, 97)
+
+[node name="Zombie2" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(245, -63)
+
+[node name="Zombie3" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(-199, 191)
+
+[node name="Zombie4" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(-188, 26)
+
+[node name="Zombie5" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(-31, -24)

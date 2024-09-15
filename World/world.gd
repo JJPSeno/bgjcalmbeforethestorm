@@ -10,3 +10,4 @@ func _ready() -> void:
 
 func _on_bloodmoon_started() -> void:
 	canvas_layer.visible = true
+	%ZombieMoan.play()

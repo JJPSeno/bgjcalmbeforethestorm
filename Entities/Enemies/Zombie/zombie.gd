@@ -13,6 +13,7 @@ func _ready() -> void:
 	target = all_targets[0]
 	
 func _physics_process(delta: float) -> void:
+	if is_dead: return
 	var direction = Vector3.ZERO
 	for candidate in all_targets:
 		if candidate == target:
@@ -20,9 +21,6 @@ func _physics_process(delta: float) -> void:
 		if global_position.distance_squared_to(candidate.global_position) <= global_position.distance_squared_to(target.global_position):
 			target = candidate
 			
-	
-	
-	
 	if !target == null:
 		nav.target_position = target.global_position
 	
@@ -33,5 +31,16 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+var  is_dead := false
 func interact():
+	if is_dead: return
+	
+	is_dead = true
+	hide()
+	
+	$ZombieWeapon/CollisionShape2D.disabled = true
+	var sound = [%Zombie1, %Zombie2, %Zombie3][randi_range(0,2)]
+	sound.play()
+	await sound.finished
 	queue_free()
+	
