@@ -17,7 +17,7 @@
 y_sort_enabled = true
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_m64ys")]
-position = Vector2(-273, 384)
+position = Vector2(138, 101)
 
 [node name="NPCs" type="Node2D" parent="."]
 
@@ -85,18 +85,6 @@ position = Vector2(-1880, 1682)
 
 [node name="Meteor" parent="Ore Biome" instance=ExtResource("9_qb68i")]
 position = Vector2(-2068, 1803)
-
-[node name="Ore12" parent="Ore Biome" instance=ExtResource("9_dikfu")]
-position = Vector2(-644, 900)
-
-[node name="Ore13" parent="Ore Biome" instance=ExtResource("9_dikfu")]
-position = Vector2(-624, 897)
-
-[node name="Ore14" parent="Ore Biome" instance=ExtResource("9_dikfu")]
-position = Vector2(-659, 893)
-
-[node name="Meteor2" parent="Ore Biome" instance=ExtResource("9_qb68i")]
-position = Vector2(-542, 909)
 
 [node name="World" type="Node2D" parent="."]
 y_sort_enabled = true
