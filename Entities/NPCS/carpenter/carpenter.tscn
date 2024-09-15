@@ -1,9 +1,62 @@
-[gd_scene load_steps=10 format=3 uid="uid://kfkmok2i6u6r"]
+[gd_scene load_steps=19 format=3 uid="uid://kfkmok2i6u6r"]
 
 [ext_resource type="Script" path="res://Entities/NPCS/Carpenter/carpenter.gd" id="1_63kbf"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_vrvcc"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_jl3h6"]
 [ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="4_iovey"]
+[ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="5_5huqq"]
+[ext_resource type="Script" path="res://Components/dialogue/GameDialogue.gd" id="6_gfpne"]
+
+[sub_resource type="Resource" id="Resource_ij7k2"]
+script = ExtResource("6_gfpne")
+condition = "not(active_quest) && carpenter_level == 1"
+text = "you there, storms a comin. Chop 4 wood for me."
+completion = "start_quest(\"carpenter\",1)"
+
+[sub_resource type="Resource" id="Resource_bq2n2"]
+script = ExtResource("6_gfpne")
+condition = "active_quest == \"carpenter_1\" and harvested_trees >= TREES_TO_HARVEST"
+text = "place it down, now get out of here
+---
+I have to prepare
+"
+completion = "finish_quest(\"carpenter\",1)
+set(\"carpenter_level\",2)"
+
+[sub_resource type="Resource" id="Resource_80sdy"]
+script = ExtResource("6_gfpne")
+condition = "not(active_quest) and carpenter_level == 2"
+text = "If you want to be useful, reinforce the windows
+---
+Take this wood and reinforce *ALL* the windows
+---
+I've got to finish this quickly"
+completion = "start_quest(\"carpenter\",2)"
+
+[sub_resource type="Resource" id="Resource_hm1mh"]
+script = ExtResource("6_gfpne")
+condition = "active_quest == \"carpenter_2\" and windows_upgrade_count <= 0"
+text = "Now the houses are secured"
+completion = "finish_quest(\"carpenter\",2)
+set(\"carpenter_level\",3)"
+
+[sub_resource type="Resource" id="Resource_wd4ug"]
+script = ExtResource("6_gfpne")
+condition = "carpenter_level == 3"
+text = "Get out of here, I'm busy"
+completion = ""
+
+[sub_resource type="Resource" id="Resource_1b0c5"]
+script = ExtResource("6_gfpne")
+condition = "active_quest != \"carpenter_1\" and active_quest != \"carpenter_2\""
+text = "I ain't got  any use for a man who cant finish his quests"
+completion = ""
+
+[sub_resource type="Resource" id="Resource_vgy0t"]
+script = ExtResource("6_gfpne")
+condition = ""
+text = "Hmph"
+completion = ""
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owyqq"]
 atlas = ExtResource("1_vrvcc")
@@ -44,15 +97,23 @@ animations = [{
 [node name="Carpenter" type="Node2D"]
 script = ExtResource("1_63kbf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_e0bmb")
-speed_scale = 0.0
-
 [node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_jl3h6")]
 collision_layer = 32
 collision_mask = 12
 parent = NodePath("..")
 
 [node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_iovey")]
-target = NodePath("../AnimatedSprite2D")
+target = NodePath("../Bob Target")
 is_bobbing = true
+
+[node name="Dialogueable" parent="." instance=ExtResource("5_5huqq")]
+position = Vector2(0, -21)
+dialogues = Array[ExtResource("6_gfpne")]([SubResource("Resource_ij7k2"), SubResource("Resource_bq2n2"), SubResource("Resource_80sdy"), SubResource("Resource_hm1mh"), SubResource("Resource_wd4ug"), SubResource("Resource_1b0c5"), SubResource("Resource_vgy0t")])
+
+[node name="Bob Target" type="Node2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bob Target"]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_e0bmb")
+speed_scale = 0.0
