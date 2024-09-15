@@ -94,10 +94,16 @@ func create_weapon_active_timer() -> void:
 func set_weapon_monitor(value: bool):
 	weapon.monitorable = value
 	weapon.monitoring = value
-
+	for child in weapon.get_children():
+		if child is CollisionShape2D:
+			child.set_deferred('disabled', not(value))
 
 func hurt():
-	prints("owwww")
+	$Health.health -= 0.5
+	if $Health.health <= 0:
+		%YouLoseScreen.show()
+		Engine.time_scale = 0.5
+		
 
 
 func _on_timer_timeout(timer: Timer) -> void:

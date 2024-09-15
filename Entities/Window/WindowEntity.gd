@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var harvestible:= true
+var harvestible:= false
 @onready var audio = %WoodChop
 @onready var spriteBoarded = %"Sprite - Boarded"
 @onready var sprite = %"Sprite"

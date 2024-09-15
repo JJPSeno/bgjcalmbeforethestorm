@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bhnoos5wf8m37"]
+[gd_scene load_steps=23 format=3 uid="uid://bhnoos5wf8m37"]
 
 [ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_r6anq"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="2_afvag"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="8_36uwb"]
 [ext_resource type="PackedScene" uid="uid://cro6pn861updj" path="res://Components/walksound/walksound.tscn" id="9_kimv4"]
 [ext_resource type="Script" path="res://Entities/Player/hatz.gd" id="10_fvkwi"]
+[ext_resource type="PackedScene" uid="uid://cooxhq2amar2t" path="res://Entities/You Lose Entity.tscn" id="11_4qqpn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dn3k"]
 
@@ -165,5 +166,15 @@ shape = SubResource("RectangleShape2D_hxsv8")
 
 [node name="HATZ" type="Node" parent="."]
 script = ExtResource("10_fvkwi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="YouLoseScreen" parent="." instance=ExtResource("11_4qqpn")]
+unique_name_in_owner = true
+visible = false
 
 [editable path="Interactable"]

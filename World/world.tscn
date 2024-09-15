@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3gfnh0g4e1fo" path="res://Assets/ui/tile_0093.png" id="3_8g2qe"]
 [ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
 [ext_resource type="Texture2D" uid="uid://c0si6reeua4hr" path="res://Assets/ui/tile_0086.png" id="4_kn0lf"]
-[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/Carpenter/carpenter.tscn" id="5_5spr1"]
+[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_5spr1"]
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
 [ext_resource type="Texture2D" uid="uid://01i5tb3ruqjw" path="res://Assets/ui/tile_0120.png" id="5_o2isv"]
 [ext_resource type="PackedScene" uid="uid://tkt6eauokv8m" path="res://Entities/NPCS/Tailor/tailor.tscn" id="6_dqhfu"]
@@ -28,7 +28,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1932, -1476, -65, -183
 y_sort_enabled = true
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_m64ys")]
-position = Vector2(141, 110)
+position = Vector2(138, 101)
 
 [node name="NPCs" type="Node2D" parent="."]
 

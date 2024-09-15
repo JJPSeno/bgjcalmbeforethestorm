@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if (parent != null):
+		print("AREA NAME",area.name)
 		if area.is_in_group("weapon"): 
 			if parent.has_method("interact"):
 				parent.interact()

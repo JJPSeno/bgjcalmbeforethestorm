@@ -1,6 +1,7 @@
 extends Node2D
 
 var harvestible:= false
+var harvested:= false
 @onready var audio:AudioStreamPlayer = %WoodChop
 func _ready() -> void:
 	QuestSystem.start_carpenter_quest_1.connect(func ():harvestible = true)
@@ -8,8 +9,11 @@ func _ready() -> void:
 
 
 func interact():
+	if harvested: return
+	
 	audio.play()
 	if harvestible:
+		harvested = true
 		QuestSystem.harvested_trees += 1
 		hide()
 		await audio.finished

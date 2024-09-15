@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var harvestible:= false
+var harvested:= false
 @onready var audio:AudioStreamPlayer = %"Rabbit-squeek"
 var random_direction:Vector2
 const SPEED := 22
@@ -27,8 +28,10 @@ func pick_random_direction():
 
 
 func interact():
+	if harvested: return
 	audio.play()
 	if harvestible:
+		harvested = true
 		QuestSystem.harvested_rabbits += 1
 		hide()
 		await audio.finished
