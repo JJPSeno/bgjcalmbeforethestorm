@@ -4,12 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
 [ext_resource type="Texture2D" uid="uid://c3gfnh0g4e1fo" path="res://Assets/ui/tile_0093.png" id="3_8g2qe"]
 [ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_5spr1"]
-=======
 [ext_resource type="Texture2D" uid="uid://c0si6reeua4hr" path="res://Assets/ui/tile_0086.png" id="4_kn0lf"]
-[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/Carpenter/carpenter.tscn" id="5_5spr1"]
->>>>>>> 9b4a09124caeb050f0cc89541f7e33ab4f28f931
+[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_5spr1"]
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
 [ext_resource type="Texture2D" uid="uid://01i5tb3ruqjw" path="res://Assets/ui/tile_0120.png" id="5_o2isv"]
 [ext_resource type="PackedScene" uid="uid://tkt6eauokv8m" path="res://Entities/NPCS/Tailor/tailor.tscn" id="6_dqhfu"]
