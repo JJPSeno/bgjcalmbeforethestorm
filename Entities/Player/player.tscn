@@ -1,13 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhnoos5wf8m37"]
+[gd_scene load_steps=22 format=3 uid="uid://bhnoos5wf8m37"]
 
 [ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_r6anq"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="2_afvag"]
+[ext_resource type="Texture2D" uid="uid://4vws7r7d7nxh" path="res://Config/furniture/Hat.tres" id="3_5ps73"]
 [ext_resource type="PackedScene" uid="uid://dgngt6uo4bldn" path="res://Components/swingable/weapon_controller.tscn" id="3_77hlt"]
 [ext_resource type="Script" path="res://Components/health/health.gd" id="4_fwab0"]
 [ext_resource type="PackedScene" uid="uid://cs5t8xml0fug2" path="res://Components/health/healthbar.tscn" id="5_y0p13"]
 [ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="6_qe7xw"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="8_36uwb"]
 [ext_resource type="PackedScene" uid="uid://cro6pn861updj" path="res://Components/walksound/walksound.tscn" id="9_kimv4"]
+[ext_resource type="Script" path="res://Entities/Player/hatz.gd" id="10_fvkwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dn3k"]
 
@@ -118,6 +120,20 @@ animation = &"face_left"
 autoplay = "face_down"
 offset = Vector2(0, 16)
 
+[node name="Hat 1" type="Sprite2D" parent="Bobble Target/AnimatedSprite2D"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1.19209e-07, 4)
+scale = Vector2(0.680002, 0.680002)
+texture = ExtResource("3_5ps73")
+
+[node name="Hat 2" type="Sprite2D" parent="Bobble Target/AnimatedSprite2D"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1.19209e-07, -2)
+scale = Vector2(0.680002, 0.680002)
+texture = ExtResource("3_5ps73")
+
 [node name="WeaponPivot" type="Node2D" parent="."]
 
 [node name="WeaponController" parent="WeaponPivot" instance=ExtResource("3_77hlt")]
@@ -146,5 +162,8 @@ parent = NodePath("..")
 
 [node name="CollisionShape2D" parent="Interactable" index="0"]
 shape = SubResource("RectangleShape2D_hxsv8")
+
+[node name="HATZ" type="Node" parent="."]
+script = ExtResource("10_fvkwi")
 
 [editable path="Interactable"]
