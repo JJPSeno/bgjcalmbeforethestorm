@@ -2,19 +2,16 @@
 
 [ext_resource type="TileSet" uid="uid://cf55y4yeoncux" path="res://Config/Wooden House Set.tres" id="1_r6ura"]
 [ext_resource type="PackedScene" uid="uid://d1igu3fewrmqh" path="res://Entities/Door/Double_Door.tscn" id="2_hll8a"]
+[ext_resource type="PackedScene" uid="uid://dgqx7vldlp0t7" path="res://Entities/Door/Door.tscn" id="2_k5vpj"]
 [ext_resource type="Texture2D" uid="uid://d3x8lhi420bnc" path="res://Config/furniture/Puppet.tres" id="3_0hyun"]
 [ext_resource type="Texture2D" uid="uid://c4ijvuewdj2j5" path="res://Config/furniture/Puppet_2.tres" id="5_hs6vf"]
 [ext_resource type="Texture2D" uid="uid://dr8bfaw4sj0ys" path="res://Config/furniture/Puppet_3.tres" id="6_8mioa"]
 [ext_resource type="Texture2D" uid="uid://cawbosyeacf2" path="res://Config/furniture/TextileShelf.tres" id="7_etjrx"]
 [ext_resource type="Texture2D" uid="uid://c4817tfsja5nc" path="res://Config/furniture/BigTable.tres" id="7_jqqij"]
-[ext_resource type="Texture2D" uid="uid://cl4vsc7akvayp" path="res://Config/furniture/Door_Horizontal.tres" id="8_qagy3"]
 [ext_resource type="Texture2D" uid="uid://dn3c8ev4wlwvd" path="res://Config/furniture/Bed.tres" id="9_ukaph"]
 [ext_resource type="Texture2D" uid="uid://cpqh7aidgfsqh" path="res://Config/furniture/SideTable.tres" id="10_juvgd"]
 
 [node name="Tailors_Hut" type="Node2D"]
-
-[node name="Door" parent="." instance=ExtResource("2_hll8a")]
-position = Vector2(81, 16)
 
 [node name="Floor" type="TileMapLayer" parent="."]
 position = Vector2(-224, -128)
@@ -59,11 +56,6 @@ scale = Vector2(1.05398, 1.47727)
 texture = ExtResource("7_etjrx")
 offset = Vector2(-10.8308, -3.8923)
 
-[node name="DoorHorizontal" type="Sprite2D" parent="."]
-position = Vector2(304.5, 112)
-scale = Vector2(0.96875, 1)
-texture = ExtResource("8_qagy3")
-
 [node name="Bed" type="Sprite2D" parent="."]
 position = Vector2(363, 43)
 scale = Vector2(2.16667, 1)
@@ -79,3 +71,6 @@ texture = ExtResource("10_juvgd")
 
 [node name="Door2" parent="." instance=ExtResource("2_hll8a")]
 position = Vector2(80, 16)
+
+[node name="Door" parent="." instance=ExtResource("2_k5vpj")]
+position = Vector2(305, 121)
