@@ -99,13 +99,11 @@ func set_weapon_monitor(value: bool):
 			child.set_deferred('disabled', not(value))
 
 func hurt():
-	$Health.health -= 0.5
+	$Health.health -= 13
 	if $Health.health <= 0:
 		%YouLoseScreen.show()
-		Engine.time_scale = 0.5
+		Engine.time_scale = 0
 		
-
-
 func _on_timer_timeout(timer: Timer) -> void:
 	can_swing = true
 	set_weapon_monitor(false)

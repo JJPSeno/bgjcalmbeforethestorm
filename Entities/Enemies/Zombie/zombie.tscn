@@ -1,8 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b53vr80xvjhbe"]
+[gd_scene load_steps=15 format=3 uid="uid://b53vr80xvjhbe"]
 
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_ceud8"]
 [ext_resource type="Script" path="res://Entities/Enemies/Zombie/zombie.gd" id="1_we78h"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_2gjsd"]
+[ext_resource type="AudioStream" uid="uid://cfsltgrpmji2m" path="res://Assets/sounds/zombie_1.wav" id="2_k20ar"]
+[ext_resource type="AudioStream" uid="uid://doefi6uvwoi4f" path="res://Assets/sounds/zombie_2.wav" id="3_ejyhr"]
+[ext_resource type="AudioStream" uid="uid://bamngjais1l5v" path="res://Assets/sounds/zombie_3.wav" id="4_qoqj5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xkwd"]
 
@@ -52,6 +55,18 @@ radius = 21.89
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_we78h")
+
+[node name="Zombie1" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_k20ar")
+
+[node name="Zombie2" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_ejyhr")
+
+[node name="Zombie3" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_qoqj5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5xkwd")
