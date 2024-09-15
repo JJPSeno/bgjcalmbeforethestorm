@@ -3,6 +3,7 @@ extends Node2D
 signal toolsmith_quest_1_ended
 
 var harvestable = false
+var harvested = false
 
 @onready var ore_hit:AudioStreamPlayer = $OreHit
 
@@ -13,17 +14,18 @@ func _ready() -> void:
 
 
 func interact():
+	if harvested: return
+	
 	ore_hit.play()
 	if harvestable:
+		harvested = true
 		QuestSystem.harvested_ores += 1
-		if QuestSystem.harvested_ores >= QuestSystem.ORES_TO_HARVEST:
-			QuestSystem.finish_toolsmith_quest_1.emit()
 		
-		# HACK -  cant free until sound is done
-		# so we hide, move it far away so the rigidbody is gone
-		# then free it
+		## HACK -  cant free until sound is done
+		## so we hide, move it far away so the rigidbody is gone
+		## then free it
+		$OreStaticBody.queue_free()
 		hide()
-		position = Vector2.INF 
 		await ore_hit.finished
 		queue_free()
 

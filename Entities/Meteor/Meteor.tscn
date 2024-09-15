@@ -27,6 +27,7 @@ texture = SubResource("AtlasTexture_ma765")
 offset = Vector2(32, 4)
 
 [node name="MeteorStaticBody" parent="Meteor" instance=ExtResource("4_i1ibn")]
+unique_name_in_owner = true
 position = Vector2(39, 0)
 scale = Vector2(0.5, 0.5)
 

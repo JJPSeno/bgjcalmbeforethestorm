@@ -22,7 +22,14 @@ func _ready() -> void:
 		change_weapon(Weapons.AVG)
 	else:
 		change_weapon(Weapons.GREAT)
-
+		
+#func _process(delta: float) -> void:
+	#print("helo",[
+	#average_sword.monitorable,
+	#average_sword.monitoring,
+	#great_sword.monitorable,
+	#great_sword.monitoring
+	#])
 
 func change_weapon(weapon: Weapons) -> void:
 	match weapon:
@@ -45,3 +52,11 @@ func return_current_weapon() -> Node2D:
 
 func _on_weapon_upgraded() -> void:
 	change_weapon(Weapons.GREAT)
+	average_sword.monitorable = false
+	average_sword.monitoring = false
+	great_sword.monitorable = false
+	great_sword.monitoring = false
+	
+	for child in average_sword.get_children():
+		if child is CollisionShape2D:
+			child.set_deferred('disabled', true)

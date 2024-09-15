@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_m64ys"]
 [ext_resource type="PackedScene" uid="uid://8w0ml10hpnxd" path="res://World/Buildings/Player_Room_Bldg.tscn" id="2_87cis"]
 [ext_resource type="PackedScene" uid="uid://bnu7gt00el3rr" path="res://World/Buildings/Carpenter_Bldg.tscn" id="4_bl0i6"]
-[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/Carpenter/carpenter.tscn" id="5_5spr1"]
+[ext_resource type="PackedScene" uid="uid://kfkmok2i6u6r" path="res://Entities/NPCS/carpenter/carpenter.tscn" id="5_5spr1"]
 [ext_resource type="PackedScene" uid="uid://be67annsivf7" path="res://World/Buildings/Tailors_Hut.tscn" id="5_kgqvn"]
 [ext_resource type="PackedScene" uid="uid://tkt6eauokv8m" path="res://Entities/NPCS/Tailor/tailor.tscn" id="6_dqhfu"]
 [ext_resource type="PackedScene" uid="uid://blhugsrkjmffk" path="res://World/Buildings/Toolsmithery.tscn" id="6_trm65"]
@@ -17,7 +17,7 @@
 y_sort_enabled = true
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_m64ys")]
-position = Vector2(141, 110)
+position = Vector2(-273, 384)
 
 [node name="NPCs" type="Node2D" parent="."]
 
@@ -85,6 +85,18 @@ position = Vector2(-1880, 1682)
 
 [node name="Meteor" parent="Ore Biome" instance=ExtResource("9_qb68i")]
 position = Vector2(-2068, 1803)
+
+[node name="Ore12" parent="Ore Biome" instance=ExtResource("9_dikfu")]
+position = Vector2(-644, 900)
+
+[node name="Ore13" parent="Ore Biome" instance=ExtResource("9_dikfu")]
+position = Vector2(-624, 897)
+
+[node name="Ore14" parent="Ore Biome" instance=ExtResource("9_dikfu")]
+position = Vector2(-659, 893)
+
+[node name="Meteor2" parent="Ore Biome" instance=ExtResource("9_qb68i")]
+position = Vector2(-542, 909)
 
 [node name="World" type="Node2D" parent="."]
 y_sort_enabled = true

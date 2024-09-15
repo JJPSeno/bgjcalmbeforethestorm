@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var audio:AudioStreamPlayer = %"SlimeSquish"
 var random_direction:Vector2
+var harvested = false
 const SPEED := 15
 func _ready() -> void:
 	pick_random_direction.call_deferred()
@@ -22,6 +23,8 @@ func pick_random_direction():
 
 
 func interact():
+	if harvested: return
+	harvested = true
 	audio.play()
 	hide()
 	await audio.finished
