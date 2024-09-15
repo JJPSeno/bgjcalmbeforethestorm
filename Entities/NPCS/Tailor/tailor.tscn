@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://tkt6eauokv8m"]
+[gd_scene load_steps=19 format=3 uid="uid://tkt6eauokv8m"]
 
 [ext_resource type="Script" path="res://Entities/NPCS/Tailor/tailor.gd" id="1_crrqw"]
 [ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_yht4l"]
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_egw3a"]
 [ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="3_v85ut"]
+[ext_resource type="PackedScene" uid="uid://kae4otgvoawf" path="res://Components/dialogue/dialogueable.tscn" id="5_rl6gw"]
+[ext_resource type="Script" path="res://Components/dialogue/GameDialogue.gd" id="6_nw1j0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5aaa"]
 atlas = ExtResource("1_yht4l")
@@ -41,10 +43,68 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_ij7k2"]
+script = ExtResource("6_nw1j0")
+condition = "not(active_quest) && tailor_level == 1"
+text = "Hey there friend. The weather is about to be chilly.
+---
+I want make warm clothes for everyone
+---
+Won't you get 9 cotton for me?"
+completion = "start_quest(\"tailor\",1)"
+
+[sub_resource type="Resource" id="Resource_bq2n2"]
+script = ExtResource("6_nw1j0")
+condition = "active_quest == \"tailor_1\" and harvested_cotton >= COTTON_TO_HARVEST"
+text = "Oh this is wonderful, this will be enough for everyone. Here, take this
+---
+I hope it can keep you dry in the coming rain"
+completion = "finish_quest(\"tailor\",1)
+set(\"tailor_level\",2)"
+
+[sub_resource type="Resource" id="Resource_80sdy"]
+script = ExtResource("6_nw1j0")
+condition = "not(active_quest) and tailor_level == 2"
+text = "Hello again friend, I'm concerned that our clothes are still not warm enough
+---
+Can you get me the hide of 3 rabbits?"
+completion = "start_quest(\"tailor\",2)"
+
+[sub_resource type="Resource" id="Resource_hm1mh"]
+script = ExtResource("6_nw1j0")
+condition = "active_quest == \"tailor_2\" and harvested_rabbits  >= RABBITS_TO_HARVEST"
+text = "Oh splendid, I shall now get to work, here is another hat for your troubles"
+completion = "finish_quest(\"tailor\",2)
+set(\"tailor_level\",3)"
+
+[sub_resource type="Resource" id="Resource_wd4ug"]
+script = ExtResource("6_nw1j0")
+condition = "tailor_level == 3"
+text = "Imagine how much money i'll be making"
+completion = ""
+
+[sub_resource type="Resource" id="Resource_1b0c5"]
+script = ExtResource("6_nw1j0")
+condition = "active_quest != \"tailor_1\" and active_quest != \"tailor_2\""
+text = "Friend, we must not do too much. Finish your other quests first"
+completion = ""
+
+[sub_resource type="Resource" id="Resource_vgy0t"]
+script = ExtResource("6_nw1j0")
+condition = ""
+text = "We best get moving friend
+---
+mother nature waits for no one"
+completion = ""
+
 [node name="Tailor" type="Node2D"]
 script = ExtResource("1_crrqw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Bob Target" type="Node2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bob Target"]
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_l8k56")
 speed_scale = 0.0
 
@@ -54,5 +114,9 @@ collision_mask = 12
 parent = NodePath("..")
 
 [node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_v85ut")]
-target = NodePath("../AnimatedSprite2D")
+target = NodePath("../Bob Target")
 is_bobbing = true
+
+[node name="Dialogueable" parent="." instance=ExtResource("5_rl6gw")]
+position = Vector2(0, -21)
+dialogues = Array[ExtResource("6_nw1j0")]([SubResource("Resource_ij7k2"), SubResource("Resource_bq2n2"), SubResource("Resource_80sdy"), SubResource("Resource_hm1mh"), SubResource("Resource_wd4ug"), SubResource("Resource_1b0c5"), SubResource("Resource_vgy0t")])

@@ -29,3 +29,18 @@ WalkGravelLoop.wav by UATaudio
 Metal Clank (Hitting the Lid of the Pan) by Mish7913 
 -- https://freesound.org/s/741357/ 
 -- License: Creative Commons 0
+
+(Cotton Hit)
+grass1.wav by Snoman 
+-- https://freesound.org/s/9904/ 
+-- License: Attribution 4.0
+
+(Rabbit Squeek)
+Creaking Chair straining under stress percussion screech.wav by MattRuthSound 
+-- https://freesound.org/s/529124/ 
+-- License: Attribution 4.0
+
+(Slime Squish)
+Horror Scary Eyeball Squeeze Squish by N0IZ 
+-- https://freesound.org/s/642180/ 
+-- License: Attribution 4.0

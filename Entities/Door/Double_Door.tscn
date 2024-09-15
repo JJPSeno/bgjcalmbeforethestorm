@@ -38,8 +38,8 @@ flip_h = true
 
 [node name="SOLID BODY" parent="." instance=ExtResource("3_23huo")]
 unique_name_in_owner = true
-position = Vector2(-1, -1)
-scale = Vector2(4.625, 1)
+position = Vector2(11, -5)
+scale = Vector2(1.36653, 0.891398)
 
 [node name="Door Controller" type="Node2D" parent="."]
 script = ExtResource("4_88vgv")

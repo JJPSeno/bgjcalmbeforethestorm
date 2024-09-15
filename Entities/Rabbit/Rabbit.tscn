@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://3106nuwkkdjq"]
+
+[ext_resource type="Script" path="res://Entities/Rabbit/rabbit.gd" id="1_hkxrv"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_ngtmx"]
+[ext_resource type="Texture2D" uid="uid://bbaj4j7ounlsm" path="res://Assets/npcs/animals.png" id="3_saevt"]
+[ext_resource type="PackedScene" uid="uid://cdufi2gvvbf2c" path="res://Components/bobbleable/bobbleable.tscn" id="5_aojkk"]
+[ext_resource type="AudioStream" uid="uid://cu7pfcbfrtlv" path="res://Assets/sounds/rabbit-squeek.wav" id="5_bmjqr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uk2f"]
+atlas = ExtResource("3_saevt")
+region = Rect2(40, 4, 16, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvg44"]
+size = Vector2(13, 21)
+
+[node name="Rabbit" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_hkxrv")
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_ngtmx")]
+position = Vector2(1, 1)
+scale = Vector2(0.68, 0.935)
+parent = NodePath("..")
+
+[node name="CollisionShape2D" parent="Interactable" index="0"]
+position = Vector2(-1, 6)
+
+[node name="Bobbeable" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_aojkk")]
+target = NodePath("../Bob Target")
+is_bobbing = true
+
+[node name="Bob Target" type="Node2D" parent="."]
+position = Vector2(0, 14)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bob Target"]
+position = Vector2(0, -29)
+texture = SubResource("AtlasTexture_6uk2f")
+offset = Vector2(0, 16)
+
+[node name="Rabbit-squeek" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_bmjqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 5.5)
+shape = SubResource("RectangleShape2D_jvg44")
+
+[editable path="Interactable"]

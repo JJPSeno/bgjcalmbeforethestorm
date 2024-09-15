@@ -36,12 +36,19 @@ var has_meteor = false
 
 
 #region tailor quest block
-var tailor_level = 1
 signal start_tailor_quest_1
 signal finish_tailor_quest_1
 
 signal start_tailor_quest_2
 signal finish_tailor_quest_2
+
+const COTTON_TO_HARVEST := 9
+const RABBITS_TO_HARVEST := 3
+
+var tailor_level = 1
+var harvested_cotton = 0
+var harvested_rabbits = 0
+
 #endregion
 
 #region carpenter quest block
