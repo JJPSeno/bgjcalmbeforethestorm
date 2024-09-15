@@ -1,5 +1,5 @@
 extends Node2D
 
 
-func interact(area: Area2D):
+func interact():
 	print("You have interacted with cotton")
