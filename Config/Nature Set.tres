@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://pwoj3a44q01"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://pwoj3a44q01"]
 
 [ext_resource type="Texture2D" uid="uid://c47fo3rfh3yiy" path="res://Assets/entities/trees.png" id="1_7hm3g"]
 [ext_resource type="PackedScene" uid="uid://cia4xeumiqah0" path="res://Entities/Trees/Tree1.tscn" id="4_0bmai"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://3106nuwkkdjq" path="res://Entities/Rabbit/Rabbit.tscn" id="5_5es5x"]
 [ext_resource type="PackedScene" uid="uid://botne6bigty57" path="res://Entities/Trees/Tree2.tscn" id="5_rkvby"]
 [ext_resource type="PackedScene" uid="uid://c637mmbak5yqq" path="res://Entities/Slime/Slime.tscn" id="6_x5kjg"]
+[ext_resource type="PackedScene" uid="uid://8rdfvyhu7ppi" path="res://Systems/ZombieSpawner/zombie_spawner.tscn" id="7_ucyrf"]
+[ext_resource type="PackedScene" uid="uid://ddwv800srjdms" path="res://Entities/NPCS/Vaillager/villager.tscn" id="8_mj45o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_584wm"]
 texture = ExtResource("1_7hm3g")
@@ -23,6 +25,8 @@ scenes/2/scene = ExtResource("5_rkvby")
 scenes/3/scene = ExtResource("4_iv45g")
 scenes/4/scene = ExtResource("5_5es5x")
 scenes/5/scene = ExtResource("6_x5kjg")
+scenes/6/scene = ExtResource("7_ucyrf")
+scenes/7/scene = ExtResource("8_mj45o")
 
 [resource]
 tile_size = Vector2i(32, 32)
