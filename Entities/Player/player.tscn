@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="8_36uwb"]
 [ext_resource type="PackedScene" uid="uid://cro6pn861updj" path="res://Components/walksound/walksound.tscn" id="9_kimv4"]
 [ext_resource type="Script" path="res://Entities/Player/hatz.gd" id="10_fvkwi"]
-[ext_resource type="PackedScene" uid="uid://cooxhq2amar2t" path="res://Entities/You Lose Entity.tscn" id="11_4qqpn"]
+[ext_resource type="PackedScene" path="res://Entities/You Lose Entity.tscn" id="11_4qqpn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dn3k"]
 
