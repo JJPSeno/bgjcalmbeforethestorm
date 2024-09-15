@@ -1,7 +1,7 @@
 extends Node2D
 
 
-func interact():
+func interact(area: Area2D):
 	print("You have interacted with the carpenter")
 
 	# Temporary, change this to the actual system

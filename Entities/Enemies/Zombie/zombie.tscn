@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://b53vr80xvjhbe"]
+
+[ext_resource type="Texture2D" uid="uid://ostdwu2qbykc" path="res://Assets/npcs/npcs.png" id="1_ceud8"]
+[ext_resource type="Script" path="res://Entities/Enemies/Zombie/zombie.gd" id="1_we78h"]
+[ext_resource type="PackedScene" uid="uid://ub47qa11wspb" path="res://Components/interactable/interactable.tscn" id="2_2gjsd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xkwd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttbql"]
+atlas = ExtResource("1_ceud8")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45lfk"]
+atlas = ExtResource("1_ceud8")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak1hl"]
+atlas = ExtResource("1_ceud8")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6qfn"]
+atlas = ExtResource("1_ceud8")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlxdk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttbql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45lfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak1hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6qfn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ypvq"]
+size = Vector2(22, 36)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohcbq"]
+radius = 64.3
+
+[node name="Zombie" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_we78h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5xkwd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mlxdk")
+speed_scale = 0.0
+
+[node name="Interactable" parent="." node_paths=PackedStringArray("parent") groups=["enemy"] instance=ExtResource("2_2gjsd")]
+collision_layer = 8
+collision_mask = 4
+parent = NodePath("..")
+
+[node name="CollisionShape2D" parent="Interactable" index="0"]
+shape = SubResource("RectangleShape2D_4ypvq")
+
+[node name="ZombieWeapon" type="Area2D" parent="." groups=["enemy"]]
+collision_layer = 128
+collision_mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZombieWeapon"]
+shape = SubResource("CircleShape2D_ohcbq")
+debug_color = Color(0.843326, 0.34113, 0.446181, 0.42)
+
+[editable path="Interactable"]

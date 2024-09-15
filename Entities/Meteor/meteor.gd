@@ -9,7 +9,7 @@ func _ready() -> void:
 func _on_quest_start():
 	is_harvestible = true
 
-func interact():
+func interact(area: Area2D):
 	audio.play(0.1)
 	if is_harvestible:
 		QuestSystem.has_meteor = true

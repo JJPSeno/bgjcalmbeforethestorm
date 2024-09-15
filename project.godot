@@ -94,6 +94,7 @@ debug_1={
 2d_physics/layer_5="harvestable"
 2d_physics/layer_6="npc"
 2d_physics/layer_7="meteor"
+2d_physics/layer_8="enemy_weapon"
 
 [rendering]
 

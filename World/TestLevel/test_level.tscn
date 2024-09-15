@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c66o8lh8t5n5"]
+[gd_scene load_steps=6 format=3 uid="uid://c66o8lh8t5n5"]
 
 [ext_resource type="PackedScene" uid="uid://bhnoos5wf8m37" path="res://Entities/Player/player.tscn" id="1_g6413"]
 [ext_resource type="PackedScene" uid="uid://w03ka4ghj5jh" path="res://Entities/Cotton/Cotton.tscn" id="2_lbnyw"]
 [ext_resource type="PackedScene" uid="uid://vyrr7a6mt5kv" path="res://Entities/Meteor/Meteor.tscn" id="3_ivbk8"]
+[ext_resource type="PackedScene" uid="uid://b53vr80xvjhbe" path="res://Entities/Enemies/Zombie/zombie.tscn" id="4_hatjw"]
+[ext_resource type="PackedScene" uid="uid://bhhtlr14jwbcc" path="res://Entities/NPCS/Toolsmith/Toolsmith.tscn" id="5_tmeet"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -12,5 +14,12 @@ position = Vector2(194.456, 57.2953)
 [node name="Meteor" parent="." instance=ExtResource("3_ivbk8")]
 position = Vector2(244.743, 184.241)
 
+[node name="Zombie" parent="." instance=ExtResource("4_hatjw")]
+position = Vector2(313.334, 102.217)
+
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_g6413")]
 position = Vector2(128, 85)
+collision_mask = 185
+
+[node name="Toolsmith" parent="." instance=ExtResource("5_tmeet")]
+position = Vector2(164, 263)
